@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Dimokritos Kallionakis – Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --navy:       #0d1f3c;
+    --navy-mid:   #162d52;
+    --navy-light: #1e3e6e;
+    --gold:       #c9a84c;
+    --gold-light: #e8c97a;
+    --white:      #ffffff;
+    --off-white:  #f7f8fc;
+    --mist:       #eef1f7;
+    --text-dark:  #111827;
+    --text-mid:   #374151;
+    --text-muted: #6b7280;
+    --border:     #d9e0ed;
+    --shadow-sm:  0 2px 8px rgba(13,31,60,.08);
+    --shadow-md:  0 6px 24px rgba(13,31,60,.12);
+    --shadow-lg:  0 16px 48px rgba(13,31,60,.16);
+    --radius:     12px;
+    --transition: .35s cubic-bezier(.4,0,.2,1);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--off-white);
+    color: var(--text-dark);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ───────────────────────────────────────────── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(13,31,60,.96);
+    backdrop-filter: blur(12px);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 6%;
+    height: 64px;
+    border-bottom: 1px solid rgba(201,168,76,.25);
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem; font-weight: 600;
+    color: var(--gold-light);
+    letter-spacing: .04em;
+  }
+  .nav-links { display: flex; gap: 2rem; }
+  .nav-links a {
+    text-decoration: none;
+    color: rgba(255,255,255,.75);
+    font-size: .85rem;
+    font-weight: 500;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    transition: color var(--transition);
+  }
+  .download-cv-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 1.6rem;
+    padding: 12px 26px;
+    background: var(--gold);
+    color: var(--navy);
+    font-weight: 600;
+    font-size: .85rem;
+    letter-spacing: .03em;
+    text-decoration: none;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+  }
+  .download-cv-btn:hover {
+    background: var(--gold-light);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+  }
+  .nav-links a:hover { color: var(--gold-light); }
+
+  /* ── HERO ──────────────────────────────────────────── */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(145deg, var(--navy) 0%, var(--navy-mid) 55%, var(--navy-light) 100%);
+    display: flex; align-items: center;
+    padding: 100px 6% 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 80% 50%, rgba(201,168,76,.07) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 10% 80%, rgba(30,62,110,.6) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  /* Decorative grid lines */
+  .hero::after {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(201,168,76,.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+  .hero-inner {
+    position: relative; z-index: 1;
+    max-width: 1100px; margin: 0 auto; width: 100%;
+    display: grid; grid-template-columns: 1fr 380px; gap: 80px; align-items: center;
+  }
+  .hero-tag {
+    display: inline-block;
+    background: rgba(201,168,76,.15);
+    border: 1px solid rgba(201,168,76,.35);
+    color: var(--gold-light);
+    font-size: .75rem; font-weight: 600;
+    letter-spacing: .12em; text-transform: uppercase;
+    padding: .35rem 1rem; border-radius: 40px;
+    margin-bottom: 1.5rem;
+    animation: fadeUp .6s ease both;
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.12;
+    letter-spacing: -.01em;
+    margin-bottom: 1rem;
+    animation: fadeUp .6s .1s ease both;
+  }
+  .hero h1 span { color: var(--gold-light); }
+  .hero-sub {
+    font-size: 1.05rem; color: rgba(255,255,255,.65);
+    max-width: 520px; margin-bottom: 2rem;
+    animation: fadeUp .6s .2s ease both;
+    font-weight: 300;
+  }
+  .hero-badges {
+    display: flex; flex-wrap: wrap; gap: .6rem;
+    animation: fadeUp .6s .3s ease both;
+  }
+  .badge {
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.15);
+    color: rgba(255,255,255,.8);
+    padding: .3rem .85rem;
+    border-radius: 40px; font-size: .78rem; font-weight: 500;
+  }
+  .hero-card {
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(201,168,76,.2);
+    border-radius: 16px;
+    padding: 2rem;
+    backdrop-filter: blur(8px);
+    animation: fadeUp .6s .25s ease both;
+  }
+  .hero-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; color: var(--gold-light);
+    letter-spacing: .06em; text-transform: uppercase;
+    margin-bottom: 1.25rem;
+    padding-bottom: .75rem;
+    border-bottom: 1px solid rgba(201,168,76,.2);
+  }
+  .contact-row {
+    display: flex; align-items: flex-start; gap: .75rem;
+    margin-bottom: 1rem; color: rgba(255,255,255,.8); font-size: .9rem;
+  }
+  .contact-row:last-child { margin-bottom: 0; }
+  .contact-icon {
+    width: 32px; height: 32px; border-radius: 8px;
+    background: rgba(201,168,76,.15);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    color: var(--gold-light); font-size: .85rem;
+  }
+  .contact-row a {
+    color: rgba(255,255,255,.8);
+    text-decoration: none;
+    transition: color var(--transition);
+  }
+  .contact-row a:hover { color: var(--gold-light); }
+
+  /* ── SECTION COMMON ────────────────────────────────── */
+  section { padding: 90px 6%; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+  .section-header { margin-bottom: 3rem; }
+  .section-label {
+    display: inline-block;
+    color: var(--gold);
+    font-size: .75rem; font-weight: 600;
+    letter-spacing: .14em; text-transform: uppercase;
+    margin-bottom: .5rem;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.9rem, 3vw, 2.6rem);
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.15;
+  }
+  .divider {
+    width: 48px; height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    border-radius: 2px; margin-top: 1rem;
+  }
+
+  /* ── ABOUT ─────────────────────────────────────────── */
+  #about {
+    background: linear-gradient(165deg, var(--navy) 0%, var(--navy-mid) 100%);
+    position: relative; overflow: hidden;
+  }
+  #about::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(201,168,76,.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+  #about .section-inner { position: relative; z-index: 1; }
+  #about .section-title { color: var(--white); }
+  #about .section-label { color: var(--gold-light); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px; align-items: start;
+  }
+  .about-text p {
+    color: rgba(255,255,255,.7);
+    margin-bottom: 1.1rem;
+    font-size: .975rem;
+    font-weight: 300;
+  }
+  .stat-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+    margin-top: 2rem;
+  }
+  .stat-box {
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(201,168,76,.2);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    text-align: center;
+    transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+  }
+  .stat-box:hover { transform: translateY(-3px); background: rgba(255,255,255,.1); }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem; font-weight: 700;
+    color: var(--white); line-height: 1;
+  }
+  .stat-num span { font-size: 1.4rem; color: var(--gold-light); }
+  .stat-label { font-size: .78rem; color: rgba(255,255,255,.55); font-weight: 500; margin-top: .3rem; text-transform: uppercase; letter-spacing: .06em; }
+  .lang-row {
+    display: flex; align-items: center; gap: 1rem;
+    padding: 1rem 1.25rem;
+    background: rgba(255,255,255,.06); border: 1px solid rgba(201,168,76,.2);
+    border-radius: var(--radius); margin-bottom: .75rem;
+  }
+  .lang-name { font-weight: 600; color: var(--white); min-width: 70px; }
+  .lang-bar-wrap { flex: 1; height: 6px; background: rgba(255,255,255,.15); border-radius: 3px; overflow: hidden; }
+  .lang-bar { height: 100%; background: linear-gradient(90deg, var(--gold), var(--gold-light)); border-radius: 3px; }
+  .lang-level { font-size: .78rem; color: rgba(255,255,255,.55); font-weight: 500; }
+
+  /* ── SKILLS ────────────────────────────────────────── */
+  #skills {
+    background: linear-gradient(165deg, var(--navy-mid) 0%, var(--navy) 100%);
+    position: relative; overflow: hidden;
+  }
+  #skills::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(201,168,76,.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+  #skills .section-inner { position: relative; z-index: 1; }
+  #skills .section-title { color: var(--white); }
+  #skills .section-label { color: var(--gold-light); }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .skill-card {
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(201,168,76,.2);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+    position: relative; overflow: hidden;
+  }
+  .skill-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    opacity: 0; transition: opacity var(--transition);
+  }
+  .skill-card:hover { transform: translateY(-4px); background: rgba(255,255,255,.1); }
+  .skill-card:hover::before { opacity: 1; }
+  .skill-card-icon {
+    width: 44px; height: 44px; border-radius: 10px;
+    background: rgba(255,255,255,.08); border: 1px solid rgba(201,168,76,.25);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1rem; font-size: 1.3rem;
+  }
+  .skill-card-title {
+    font-weight: 600; font-size: .95rem; color: var(--white);
+    margin-bottom: .75rem;
+  }
+  .tag-list { display: flex; flex-wrap: wrap; gap: .4rem; }
+  .tag {
+    background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.15);
+    color: rgba(255,255,255,.75); font-size: .75rem; font-weight: 500;
+    padding: .25rem .7rem; border-radius: 20px;
+    transition: background var(--transition), color var(--transition);
+  }
+  .skill-card:hover .tag { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+
+  /* ── EXPERIENCE ────────────────────────────────────── */
+  #experience {
+    background: linear-gradient(165deg, var(--navy) 0%, var(--navy-mid) 100%);
+    position: relative; overflow: hidden;
+  }
+  #experience::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(201,168,76,.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+  #experience .section-inner { position: relative; z-index: 1; }
+  #experience .section-title { color: var(--white); }
+  #experience .section-label { color: var(--gold-light); }
+  .timeline { position: relative; padding-left: 2px; }
+  .timeline::before {
+    content: '';
+    position: absolute; left: 0; top: 12px; bottom: 12px; width: 2px;
+    background: linear-gradient(180deg, var(--gold), rgba(255,255,255,.1));
+  }
+  .tl-item {
+    padding-left: 2.5rem; margin-bottom: 3rem;
+    position: relative; opacity: 0;
+    animation: fadeUp .6s ease forwards;
+  }
+  .tl-item:nth-child(1) { animation-delay: .1s; }
+  .tl-item:nth-child(2) { animation-delay: .25s; }
+  .tl-item:nth-child(3) { animation-delay: .4s; }
+  .tl-dot {
+    position: absolute; left: -9px; top: 8px;
+    width: 20px; height: 20px; border-radius: 50%;
+    background: var(--navy-light); border: 3px solid var(--navy);
+    box-shadow: 0 0 0 2px rgba(255,255,255,.2);
+  }
+  .tl-dot.current {
+    background: var(--gold);
+    box-shadow: 0 0 0 2px var(--gold), 0 0 12px rgba(201,168,76,.5);
+  }
+  .tl-header { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: .5rem; margin-bottom: .5rem; }
+  .tl-role {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem; font-weight: 700; color: var(--white);
+  }
+  .tl-period {
+    background: rgba(255,255,255,.08); border: 1px solid rgba(201,168,76,.25);
+    color: rgba(255,255,255,.7); font-size: .76rem; font-weight: 600;
+    padding: .25rem .75rem; border-radius: 20px; white-space: nowrap;
+  }
+  .tl-company { font-weight: 600; color: var(--gold-light); font-size: .9rem; margin-bottom: .2rem; }
+  .tl-location { font-size: .82rem; color: rgba(255,255,255,.55); margin-bottom: 1rem; }
+  .tl-list { padding-left: 1.1rem; }
+  .tl-list li {
+    color: rgba(255,255,255,.7); font-size: .9rem; font-weight: 300;
+    margin-bottom: .45rem; line-height: 1.6;
+  }
+
+  /* ── PROJECTS ──────────────────────────────────────── */
+  #projects {
+    background: linear-gradient(165deg, var(--navy-mid) 0%, var(--navy) 100%);
+    position: relative; overflow: hidden;
+  }
+  #projects::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(201,168,76,.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+  #projects .section-inner { position: relative; z-index: 1; }
+  #projects .section-title { color: var(--white); }
+  #projects .section-label { color: var(--gold-light); }
+  .region-group {
+    border: 1px solid rgba(201,168,76,.2);
+    border-radius: var(--radius);
+    margin-bottom: 1rem;
+    overflow: hidden;
+    background: rgba(255,255,255,.04);
+  }
+  .region-toggle {
+    width: 100%;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.25rem 1.5rem;
+    background: rgba(255,255,255,.05);
+    border: none; cursor: pointer;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 700; color: var(--white);
+    transition: background var(--transition);
+  }
+  .region-toggle:hover { background: rgba(255,255,255,.09); }
+  .region-toggle .region-count {
+    font-family: 'DM Sans', sans-serif;
+    font-size: .78rem; font-weight: 600; color: rgba(255,255,255,.5);
+    text-transform: uppercase; letter-spacing: .05em;
+    margin-left: .75rem;
+  }
+  .region-toggle .chevron {
+    font-size: 1rem; color: var(--gold-light);
+    transition: transform var(--transition);
+  }
+  .region-group.open .chevron { transform: rotate(180deg); }
+  .region-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transition);
+    padding: 0 1.5rem;
+  }
+  .region-group.open .region-body {
+    max-height: 4000px;
+    padding: 1.5rem;
+  }
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  .project-card {
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(201,168,76,.18);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    transition: transform var(--transition), background var(--transition);
+  }
+  .project-card:hover { transform: translateY(-4px); background: rgba(255,255,255,.09); }
+  .project-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem; font-weight: 700; color: var(--white);
+    margin-bottom: .3rem;
+  }
+  .project-card-meta {
+    font-size: .78rem; color: rgba(255,255,255,.5); font-weight: 500;
+    margin-bottom: .9rem;
+  }
+  .project-card-desc {
+    font-size: .9rem; color: rgba(255,255,255,.7); font-weight: 300;
+    margin-bottom: 1.1rem; line-height: 1.6;
+  }
+  .project-card-desc a { color: var(--gold-light); }
+  .project-card-link {
+    display: inline-flex; align-items: center; gap: .4rem;
+    font-size: .82rem; font-weight: 600; color: var(--gold-light);
+    text-decoration: none;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 2px;
+    transition: color var(--transition);
+  }
+  .project-card-link:hover { color: var(--white); }
+
+  /* ── CERTIFICATIONS ────────────────────────────────── */
+  #certifications {
+    background: linear-gradient(165deg, var(--navy) 0%, var(--navy-mid) 100%);
+    position: relative; overflow: hidden;
+  }
+  #certifications::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(201,168,76,.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+  #certifications .section-inner { position: relative; z-index: 1; }
+  #certifications .section-title { color: var(--white); }
+  #certifications .section-label { color: var(--gold-light); }
+  .cert-groups {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+  }
+  .cert-group-title {
+    font-weight: 600; font-size: .8rem;
+    letter-spacing: .1em; text-transform: uppercase;
+    color: var(--gold-light); margin-bottom: 1rem;
+    display: flex; align-items: center; gap: .6rem;
+  }
+  .cert-group-title::after {
+    content: ''; flex: 1; height: 1px; background: rgba(255,255,255,.15);
+  }
+  .cert-item {
+    display: flex; align-items: center; gap: .85rem;
+    background: rgba(255,255,255,.05); border: 1px solid rgba(201,168,76,.18);
+    border-radius: 10px; padding: 1rem 1.25rem;
+    margin-bottom: .75rem;
+    transition: transform var(--transition), background var(--transition);
+  }
+  .cert-item:hover { transform: translateX(4px); background: rgba(255,255,255,.09); }
+  .cert-badge {
+    width: 36px; height: 36px; border-radius: 8px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem;
+  }
+  .cert-badge.sec { background: rgba(255,255,255,.08); }
+  .cert-badge.net { background: rgba(201,168,76,.18); }
+  .cert-name { font-size: .875rem; font-weight: 500; color: rgba(255,255,255,.85); }
+
+  /* ── CONTACT ───────────────────────────────────────── */
+  #contact {
+    background: linear-gradient(145deg, var(--navy) 0%, var(--navy-mid) 60%, var(--navy-light) 100%);
+    position: relative; overflow: hidden;
+  }
+  #contact::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(201,168,76,.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+  #contact .section-title { color: var(--white); }
+  #contact .section-label { color: var(--gold-light); }
+  #contact .divider { background: linear-gradient(90deg, var(--gold), var(--gold-light)); }
+  .contact-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem; margin-top: 3rem;
+  }
+  .contact-card {
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: var(--radius); padding: 1.75rem;
+    text-align: center;
+    transition: background var(--transition), transform var(--transition);
+  }
+  .contact-card:hover { background: rgba(255,255,255,.1); transform: translateY(-4px); }
+  .contact-card-icon {
+    font-size: 1.8rem; margin-bottom: .75rem;
+    display: block;
+  }
+  .contact-card-label {
+    font-size: .73rem; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--gold-light); font-weight: 600; margin-bottom: .4rem;
+  }
+  .contact-card-value {
+    color: rgba(255,255,255,.85); font-size: .92rem; font-weight: 400;
+  }
+  .contact-card-value a {
+    color: rgba(255,255,255,.85); text-decoration: none;
+    transition: color var(--transition);
+  }
+  .contact-card-value a:hover { color: var(--gold-light); }
+
+  /* ── FOOTER ────────────────────────────────────────── */
+  footer {
+    background: var(--navy);
+    border-top: 1px solid rgba(201,168,76,.15);
+    text-align: center; padding: 1.75rem 6%;
+    color: rgba(255,255,255,.4); font-size: .8rem;
+  }
+  footer span { color: var(--gold-light); }
+
+  /* ── ANIMATIONS ────────────────────────────────────── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── RESPONSIVE ────────────────────────────────────── */
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .hero-card { max-width: 420px; }
+    .about-grid { grid-template-columns: 1fr; }
+    .cert-groups { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    nav { padding: 0 5%; }
+    .nav-links { gap: 1.2rem; }
+    .nav-links a { font-size: .75rem; }
+    section { padding: 70px 5%; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">D. Kallionakis</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-tag">Available for Senior Roles · Gold Coast, QLD</div>
+      <h1>Dimokritos<br><span>Kallionakis</span></h1>
+      <p class="hero-sub">Senior Security Service &amp; Surveillance Technician with 20+ years of hands-on experience in enterprise CCTV, electronic security systems and IP network infrastructure.</p>
+      <div class="hero-badges">
+        <span class="badge">CCTV &amp; Surveillance</span>
+        <span class="badge">Access Control</span>
+        <span class="badge">IP Networks</span>
+        <span class="badge">Fault Diagnosis</span>
+        <span class="badge">Cisco Certified</span>
+        <span class="badge">Fortinet Certified</span>
+      </div>
+      <a class="download-cv-btn" href="Dimokritos_Kallionakis_CV.pdf" download>⬇️ Download CV (PDF)</a>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-title">Contact Details</div>
+      <div class="contact-row">
+        <div class="contact-icon">📞</div>
+        <div><a href="tel:0426917342">0426 917 342</a></div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">✉️</div>
+        <div><a href="mailto:dimokritos.k@gmail.com">dimokritos.k@gmail.com</a></div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">📍</div>
+        <div>Gold Coast, QLD<br>Australia</div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">🔗</div>
+        <div><a href="https://www.linkedin.com/in/dimos-k-691979b5" target="_blank" rel="noopener">linkedin.com/in/dimos-k</a></div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">🌐</div>
+        <div>English &amp; Greek</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label">Who I Am</div>
+      <h2 class="section-title">Professional Summary</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>Senior Security Service &amp; Surveillance Technician with strong hands-on experience supporting live surveillance and electronic security systems in high-availability environments.</p>
+        <p>Experienced in enterprise CCTV systems, fault diagnosis, preventative maintenance and camera optimisation, with solid knowledge of IP-based video networks.</p>
+        <p>Proven ability to respond to incidents, support operational teams and maintain system reliability in regulated and continuously operating sites.</p>
+        <p>Background includes ownership of a private electronics business in Greece (2003–2015), providing a broad foundation across telecommunications, CCTV, network infrastructure and customer support.</p>
+
+        <div style="margin-top:2rem;">
+          <div class="cert-group-title" style="margin-bottom:1rem;">Languages</div>
+          <div class="lang-row">
+            <span class="lang-name">Greek</span>
+            <div class="lang-bar-wrap"><div class="lang-bar" style="width:100%"></div></div>
+            <span class="lang-level">Native</span>
+          </div>
+          <div class="lang-row">
+            <span class="lang-name">English</span>
+            <div class="lang-bar-wrap"><div class="lang-bar" style="width:80%"></div></div>
+            <span class="lang-level">Professional</span>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="stat-grid">
+          <div class="stat-box">
+            <div class="stat-num">20<span>+</span></div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">5<span>+</span></div>
+            <div class="stat-label">Major Platforms</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">7</div>
+            <div class="stat-label">Certifications</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">3</div>
+            <div class="stat-label">Countries / Regions</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label">What I Do</div>
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="skills-grid">
+
+      <div class="skill-card">
+        <div class="skill-card-icon">📷</div>
+        <div class="skill-card-title">CCTV &amp; Surveillance</div>
+        <div class="tag-list">
+          <span class="tag">Dahua</span>
+          <span class="tag">AXIS</span>
+          <span class="tag">Hikvision</span>
+          <span class="tag">Vivotek</span>
+          <span class="tag">Wisenet</span>
+          <span class="tag">Nx Witness</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-card-icon">🔐</div>
+        <div class="skill-card-title">Access Control &amp; Intercom</div>
+        <div class="tag-list">
+          <span class="tag">ICT Protege WX</span>
+          <span class="tag">Inner Range</span>
+          <span class="tag">FDi Systems</span>
+          <span class="tag">Urmet IP</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-card-icon">🔔</div>
+        <div class="skill-card-title">Alarm Systems</div>
+        <div class="tag-list">
+          <span class="tag">Bosch</span>
+          <span class="tag">Fault Diagnosis</span>
+          <span class="tag">Preventative Maintenance</span>
+          <span class="tag">System Commissioning</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-card-icon">🌐</div>
+        <div class="skill-card-title">Networking</div>
+        <div class="tag-list">
+          <span class="tag">Cisco</span>
+          <span class="tag">Fortinet</span>
+          <span class="tag">TP-Link</span>
+          <span class="tag">MikroTik</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-card-icon">🛠️</div>
+        <div class="skill-card-title">Field &amp; Service Skills</div>
+        <div class="tag-list">
+          <span class="tag">Senior-Level Troubleshooting</span>
+          <span class="tag">Camera Optimisation</span>
+          <span class="tag">Image Optimisation</span>
+          <span class="tag">WHS Compliance</span>
+          <span class="tag">Technical Reporting</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-card-icon">🏢</div>
+        <div class="skill-card-title">Enterprise Environments</div>
+        <div class="tag-list">
+          <span class="tag">Live System Maintenance</span>
+          <span class="tag">High-Availability Sites</span>
+          <span class="tag">Regulated Environments</span>
+          <span class="tag">Team Support</span>
+          <span class="tag">Documentation</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-card-icon">🤖</div>
+        <div class="skill-card-title">AI &amp; Automation</div>
+        <div class="tag-list">
+          <span class="tag">ChatGPT</span>
+          <span class="tag">Claude / Claude Code</span>
+          <span class="tag">Python</span>
+          <span class="tag">n8n Automation</span>
+          <span class="tag">Web Development</span>
+          <span class="tag">GitHub</span>
+          <span class="tag">Prompt Engineering</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label">My Journey</div>
+      <h2 class="section-title">Professional Experience</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="timeline">
+
+      <div class="tl-item">
+        <div class="tl-dot current"></div>
+        <div class="tl-header">
+          <div class="tl-role">Senior Security Service Technician</div>
+          <div class="tl-period">May 2025 – Present</div>
+        </div>
+        <div class="tl-company">Urmet Australia (formerly Epsilon Security / SUPATECH)</div>
+        <div class="tl-location">📍 Loganholme, QLD, Australia</div>
+        <ul class="tl-list">
+          <li>Service, fault diagnosis and resolution of surveillance and electronic security systems across 10–30 commercial and residential sites, managing 50–100+ devices per site on average.</li>
+          <li>Troubleshooting and maintenance of enterprise CCTV / surveillance, access control, intercom and IP network infrastructure.</li>
+          <li>Preventative maintenance including camera inspections, equipment replacement, system adjustments and image optimisation.</li>
+          <li>Diagnosing complex faults on live systems while maintaining continuous operation and system availability.</li>
+          <li>Providing technical support to service, network and project teams.</li>
+          <li>Preparing technical reports and documentation for management and compliance purposes.</li>
+        </ul>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-header">
+          <div class="tl-role">Security Service Technician</div>
+          <div class="tl-period">May 2016 – May 2023</div>
+        </div>
+        <div class="tl-company">Urmet Australia (Epsilon Security)</div>
+        <div class="tl-location">📍 Mascot, NSW, Australia</div>
+        <ul class="tl-list">
+          <li>Service and maintenance of CCTV / surveillance, access control, alarm and intercom systems.</li>
+          <li>Troubleshooting IP cameras, VMS platforms and network-related issues.</li>
+          <li>Programming and support of Urmet intercom and IP-based systems.</li>
+          <li>Supporting operational teams and service activities across multiple large sites.</li>
+          <li>Subcontractor on projects for Amazon, Fredon and Next Security.</li>
+          <li>Installation, testing and commissioning of surveillance and terminal devices.</li>
+        </ul>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-header">
+          <div class="tl-role">Owner / Electronic Systems Technician</div>
+          <div class="tl-period">2003 – 2015</div>
+        </div>
+        <div class="tl-company">Antenna Stores – Private Business</div>
+        <div class="tl-location">📍 Heraklion, Crete, Greece</div>
+        <ul class="tl-list">
+          <li>Inspection, evaluation and installation of telecommunications, antenna and alarm systems.</li>
+          <li>Installation and maintenance of CCTV systems in residential, commercial and industrial environments.</li>
+          <li>Design, implementation and maintenance of network infrastructure.</li>
+          <li>End-to-end technical support and customer management.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label">Selected Work</div>
+      <h2 class="section-title">Notable Projects</h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="region-group" id="region-sydney">
+      <button class="region-toggle" onclick="toggleRegion('region-sydney')">
+        <span>Sydney, NSW <span class="region-count">8 Projects</span></span>
+        <span class="chevron">▾</span>
+      </button>
+      <div class="region-body">
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-card-title">Opal Tower — Sydney Olympic Park</div>
+            <div class="project-card-meta">📍 Sydney, NSW &nbsp;|&nbsp; Epsilon Security, 2016–2023</div>
+            <div class="project-card-desc">Combined service across CCTV/surveillance, access control and intercom systems for one of Sydney Olympic Park's landmark high-rise residential towers — a high-availability, high-occupancy site requiring continuous system uptime.</div>
+            <a class="project-card-link" href="https://icon.co/projects/opal-tower/" target="_blank" rel="noopener">View Building →</a>
+          </div>
+          <div class="project-card">
+            <div class="project-card-title">Granville Place — Granville, NSW</div>
+            <div class="project-card-meta">📍 Granville, NSW &nbsp;|&nbsp; Epsilon Security, 2016–2023</div>
+            <div class="project-card-desc">Combined service across CCTV/surveillance, access control and intercom systems for a major 618-apartment, three-tower residential and retail development — coordinating system reliability across multiple buildings on a single large-scale site.</div>
+            <a class="project-card-link" href="https://www.parkview.com.au/projects/granville-place" target="_blank" rel="noopener">View Building →</a>
+          </div>
+          <div class="project-card">
+            <div class="project-card-title">Burwood Grand — Burwood, NSW</div>
+            <div class="project-card-meta">📍 Burwood, NSW &nbsp;|&nbsp; Epsilon Security, 2016–2023</div>
+            <div class="project-card-desc">Combined service across CCTV/surveillance, access control and intercom systems for a $500M landmark mixed-use development of three residential towers, retail tenancies and council chambers — supporting over 1,000 residents on a continuously operating site.</div>
+            <a class="project-card-link" href="https://decodegroup.com.au/projects/commercial/burwood-grand/" target="_blank" rel="noopener">View Building →</a>
+          </div>
+          <div class="project-card">
+            <div class="project-card-title">Schofield Gardens — Schofields, NSW</div>
+            <div class="project-card-meta">📍 Schofields, NSW &nbsp;|&nbsp; Epsilon Security, 2016–2023</div>
+            <div class="project-card-desc">Combined service across CCTV/surveillance, access control and intercom systems for ALAND's award-winning masterplanned residential community — a multi-stage, multi-building development supporting thousands of residents across the precinct.</div>
+            <a class="project-card-link" href="https://aland.com.au/projects/schofield-gardens/" target="_blank" rel="noopener">View Building →</a>
+          </div>
+          <div class="project-card">
+            <div class="project-card-title">Wicks Place — Marrickville, NSW</div>
+            <div class="project-card-meta">📍 Marrickville, NSW &nbsp;|&nbsp; Epsilon Security, 2016–2023</div>
+            <div class="project-card-desc">Combined service across CCTV/surveillance, access control and intercom systems for a 270-apartment urban village across five boutique buildings, anchored by a retail precinct overlooking Wicks Park.</div>
+            <a class="project-card-link" href="https://www.toga.com.au/project/wicks-place/" target="_blank" rel="noopener">View Building →</a>
+          </div>
+          <div class="project-card">
+            <div class="project-card-title">Macquarie Rise — Macquarie Park, NSW</div>
+            <div class="project-card-meta">📍 Macquarie Park, NSW &nbsp;|&nbsp; Epsilon Security, 2016–2023</div>
+            <div class="project-card-desc">Combined service across CCTV/surveillance, access control and intercom systems for a $400M, 268-apartment mixed-use precinct across three residential towers with retail and commercial podium.</div>
+            <a class="project-card-link" href="https://www.toga.com.au/project/macquarie-rise/" target="_blank" rel="noopener">View Building →</a>
+          </div>
+          <div class="project-card">
+            <div class="project-card-title">Highpoint — Hurstville, NSW</div>
+            <div class="project-card-meta">📍 Hurstville, NSW &nbsp;|&nbsp; Epsilon Security, 2016–2023</div>
+            <div class="project-card-desc">Combined service across CCTV/surveillance, access control and intercom systems for a $270M, three-tower 448-apartment masterplanned community housing 800+ residents at Hurstville's highest point.</div>
+            <a class="project-card-link" href="https://www.toga.com.au/project/highpoint-hurstville/" target="_blank" rel="noopener">View Building →</a>
+          </div>
+          <div class="project-card">
+            <div class="project-card-title">Marina Square — Wentworth Point, NSW</div>
+            <div class="project-card-meta">📍 Wentworth Point, NSW &nbsp;|&nbsp; Epsilon Security, 2016–2023</div>
+            <div class="project-card-desc">Combined service across CCTV/surveillance, access control and intercom systems for an award-winning, 765-apartment mixed-use precinct across 7 buildings above a waterfront town centre.</div>
+            <a class="project-card-link" href="https://marinasquare.com.au/" target="_blank" rel="noopener">View Building →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="region-group" id="region-canberra">
+      <button class="region-toggle" onclick="toggleRegion('region-canberra')">
+        <span>Canberra, ACT <span class="region-count">6 Projects</span></span>
+        <span class="chevron">▾</span>
+      </button>
+      <div class="region-body">
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-card-title">The Establishment — Gungahlin, ACT</div>
+            <div class="project-card-meta">📍 Gungahlin, ACT &nbsp;|&nbsp; Epsilon Security, 2016–2023</div>
+            <div class="project-card-desc">Combined service across CCTV/surveillance, access control and intercom systems for a 14-storey, 270-apartment residential tower with retail and dining precinct, in one of Canberra's fastest-growing town centres.</div>
+            <a class="project-card-link" href="https://geocon.com.au/development/the-establishment" target="_blank" rel="noopener">View Building →</a>
+          </div>
+          <div class="project-card">
+            <div class="project-card-title">WOVA — Phillip, ACT</div>
+            <div class="project-card-meta">📍 Phillip, ACT &nbsp;|&nbsp; Epsilon Security, 2016–2023</div>
+            <div class="project-card-desc">Combined service across CCTV/surveillance, access control and intercom systems for a four-tower, 800+ apartment mixed-use precinct in the heart of the old Woden Town Centre regeneration.</div>
+            <a class="project-card-link" href="https://geocon.com.au/development/wova" target="_blank" rel="noopener">View Building →</a>
+          </div>
+          <div class="project-card">
+            <div class="project-card-title">Aspen Village — Greenway, ACT</div>
+            <div class="project-card-meta">📍 Greenway, ACT &nbsp;|&nbsp; Epsilon Security, 2016–2023</div>
+            <div class="project-card-desc">Combined service across CCTV/surveillance, access control and intercom systems for Tuggeranong's first true mixed-use precinct — 570+ apartments and over 30 commercial tenancies serving 3,000+ residents.</div>
+            <a class="project-card-link" href="https://geocon.com.au/development/aspen" target="_blank" rel="noopener">View Building →</a>
+          </div>
+          <div class="project-card">
+            <div class="project-card-title">Metropol — Canberra City, ACT</div>
+            <div class="project-card-meta">📍 Canberra City, ACT &nbsp;|&nbsp; Epsilon Security, 2016–2023</div>
+            <div class="project-card-desc">Combined service across CCTV/surveillance, access control and intercom systems for a premium three-building residential complex in Canberra's CBD, including a shared resident's penthouse and rooftop terraces.</div>
+            <a class="project-card-link" href="https://geocon.com.au/development/metropol" target="_blank" rel="noopener">View Building →</a>
+          </div>
+          <div class="project-card">
+            <div class="project-card-title">The Sullivan — Lyneham, ACT</div>
+            <div class="project-card-meta">📍 Lyneham, ACT &nbsp;|&nbsp; Epsilon Security, 2016–2023</div>
+            <div class="project-card-desc">Combined service across CCTV/surveillance, access control and intercom systems for a 176-apartment, nine-storey residential building along Northbourne Avenue, part of the Northbourne Village precinct.</div>
+            <a class="project-card-link" href="https://www.jwlandconstruction.com.au/projects/the-sullivan-at-northbourne-village" target="_blank" rel="noopener">View Building →</a>
+          </div>
+          <div class="project-card">
+            <div class="project-card-title">W2 — Woden, ACT</div>
+            <div class="project-card-meta">📍 Phillip, ACT &nbsp;|&nbsp; Epsilon Security, 2016–2023</div>
+            <div class="project-card-desc">Combined service across CCTV/surveillance, access control and intercom systems for a 24-storey, 222-apartment residential tower in the heart of Woden Town Centre.</div>
+            <a class="project-card-link" href="https://ftigroup.com.au/projects/australian-capital-territory/w2-woden/" target="_blank" rel="noopener">View Building →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="region-group" id="region-queensland">
+      <button class="region-toggle" onclick="toggleRegion('region-queensland')">
+        <span>Queensland <span class="region-count">7 Projects</span></span>
+        <span class="chevron">▾</span>
+      </button>
+      <div class="region-body">
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-card-title">Marella by Mosaic — Broadbeach, Gold Coast</div>
+            <div class="project-card-meta">📍 Broadbeach, QLD &nbsp;|&nbsp; Urmet Australia, 2025–Present</div>
+            <div class="project-card-desc">Combined service across CCTV/surveillance, access control and intercom systems for a 30-storey luxury residential tower with hotel-style amenities, overlooking the Gold Coast's Broadbeach coastline.</div>
+            <a class="project-card-link" href="https://mosaicproperty.com.au/developments/marella/" target="_blank" rel="noopener">View Building →</a>
+          </div>
+          <div class="project-card">
+            <div class="project-card-title">Lily by Mosaic — Broadbeach, Gold Coast</div>
+            <div class="project-card-meta">📍 Broadbeach, QLD &nbsp;|&nbsp; Urmet Australia, 2025–Present</div>
+            <div class="project-card-desc">Combined service across CCTV/surveillance, access control and intercom systems for a 98-residence luxury tower opposite Nikiforides Family Park, sister address to Marella with full ocean views.</div>
+            <a class="project-card-link" href="https://mosaicproperty.com.au/developments/lily/" target="_blank" rel="noopener">View Building →</a>
+          </div>
+          <div class="project-card">
+            <div class="project-card-title">The Witton — Indooroopilly, Brisbane</div>
+            <div class="project-card-meta">📍 Indooroopilly, QLD &nbsp;|&nbsp; Urmet Australia, 2025–Present</div>
+            <div class="project-card-desc">Combined service across CCTV/surveillance, access control and intercom systems for a sold-out, 141-apartment boutique development across two buildings with city, river and hinterland views.</div>
+            <a class="project-card-link" href="https://mosaicproperty.com.au/developments/the-witton/" target="_blank" rel="noopener">View Building →</a>
+          </div>
+          <div class="project-card">
+            <div class="project-card-title">The Mowbray — East Brisbane</div>
+            <div class="project-card-meta">📍 East Brisbane, QLD &nbsp;|&nbsp; Urmet Australia, 2025–Present</div>
+            <div class="project-card-desc">Combined service across CCTV/surveillance, access control and intercom systems for a $96M, sold-out 82-residence development opposite Mowbray Park and the Brisbane River.</div>
+            <a class="project-card-link" href="https://mosaicproperty.com.au/developments/the-mowbray/" target="_blank" rel="noopener">View Building →</a>
+          </div>
+          <div class="project-card">
+            <div class="project-card-title">Meriton Suites Southport — Gold Coast</div>
+            <div class="project-card-meta">📍 Southport, QLD &nbsp;|&nbsp; Urmet Australia, 2025–Present</div>
+            <div class="project-card-desc">Upgraded the CCTV/surveillance system to <a href="https://www.networkoptix.com/nx-witness" target="_blank" rel="noopener">Network Optix Nx Witness</a>, including the upgrade of over 280 cameras across the 55-storey Sundale Apartments tower — the tallest building in Southport, housing 208 hotel suites above level 25.</div>
+            <a class="project-card-link" href="https://www.meritonsuites.com.au/our-hotels/qld/gold-coast/southport/" target="_blank" rel="noopener">View Building →</a>
+          </div>
+          <div class="project-card">
+            <div class="project-card-title">WHITE Main Beach — Gold Coast</div>
+            <div class="project-card-meta">📍 Main Beach, QLD &nbsp;|&nbsp; Epsilon Security, 2016–2023</div>
+            <div class="project-card-desc">Combined service across CCTV/surveillance, access control and intercom systems for a boutique 27-residence, full-floor luxury building between Tedder Avenue and Main Beach.</div>
+            <a class="project-card-link" href="https://www.kollosche.com.au/project/white-main-beach/" target="_blank" rel="noopener">View Building →</a>
+          </div>
+          <div class="project-card">
+            <div class="project-card-title">Lotus Tower — Kangaroo Point, Brisbane</div>
+            <div class="project-card-meta">📍 Kangaroo Point, QLD &nbsp;|&nbsp; Urmet Australia, 2025–Present</div>
+            <div class="project-card-desc">Service and system upgrades across CCTV/surveillance, access control and intercom systems for a 20-level tower comprising 183 apartments, 5 penthouses and 12 townhomes.</div>
+            <a class="project-card-link" href="https://www.mcnab.net.au/expertise/residential/lotus-tower" target="_blank" rel="noopener">View Building →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label">Credentials</div>
+      <h2 class="section-title">Education &amp; Certifications</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="cert-groups">
+      <div>
+        <div class="cert-group-title">Security &amp; Surveillance</div>
+        <div class="cert-item">
+          <div class="cert-badge sec">🛡️</div>
+          <div class="cert-name">ICT Protege WX</div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-badge sec">🛡️</div>
+          <div class="cert-name">Inner Range Integriti</div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-badge sec">📷</div>
+          <div class="cert-name">AXIS – Optimiser for Milestone XProtect</div>
+        </div>
+      </div>
+      <div>
+        <div class="cert-group-title">Networking &amp; Cyber Security</div>
+        <div class="cert-item">
+          <div class="cert-badge net">🔒</div>
+          <div class="cert-name">Fortinet – Getting Started in Cybersecurity 2.0</div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-badge net">🌐</div>
+          <div class="cert-name">Cisco – Introduction to Cybersecurity</div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-badge net">🌐</div>
+          <div class="cert-name">Cisco – Networking Basics</div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-badge net">🌐</div>
+          <div class="cert-name">Cisco – Networking Devices &amp; Initial Configuration</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner" style="position:relative;z-index:1;">
+    <div class="section-header">
+      <div class="section-label">Get In Touch</div>
+      <h2 class="section-title">Contact Me</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <span class="contact-card-icon">📞</span>
+        <div class="contact-card-label">Phone</div>
+        <div class="contact-card-value"><a href="tel:0426917342">0426 917 342</a></div>
+      </div>
+      <div class="contact-card">
+        <span class="contact-card-icon">✉️</span>
+        <div class="contact-card-label">Email</div>
+        <div class="contact-card-value"><a href="mailto:dimokritos.k@gmail.com">dimokritos.k@gmail.com</a></div>
+      </div>
+      <div class="contact-card">
+        <span class="contact-card-icon">📍</span>
+        <div class="contact-card-label">Location</div>
+        <div class="contact-card-value">Gold Coast, QLD<br>Australia</div>
+      </div>
+      <div class="contact-card">
+        <span class="contact-card-icon">💼</span>
+        <div class="contact-card-label">Availability</div>
+        <div class="contact-card-value">Open to Senior &amp; Lead Roles</div>
+      </div>
+      <div class="contact-card">
+        <span class="contact-card-icon">🔗</span>
+        <div class="contact-card-label">LinkedIn</div>
+        <div class="contact-card-value"><a href="https://www.linkedin.com/in/dimos-k-691979b5" target="_blank" rel="noopener">linkedin.com/in/dimos-k</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2025 <span>Dimokritos Kallionakis</span> · Senior Security Service &amp; Surveillance Technician · Gold Coast, QLD
+</footer>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.skill-card, .stat-box, .cert-item, .contact-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity .5s ease, transform .5s ease';
+    observer.observe(el);
+  });
+
+  // Region accordion toggle
+  function toggleRegion(id) {
+    document.getElementById(id).classList.toggle('open');
+  }
+  // Open Sydney by default
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('region-sydney').classList.add('open');
+  });
+</script>
+</body>
+</html>
