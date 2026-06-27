@@ -503,7 +503,7 @@
   #certifications .section-title { color: var(--white); }
   #certifications .section-label { color: var(--gold-light); }
   .cert-groups {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
   }
   .cert-group-title {
     font-weight: 600; font-size: .8rem;
@@ -529,6 +529,7 @@
   }
   .cert-badge.sec { background: rgba(255,255,255,.08); }
   .cert-badge.net { background: rgba(201,168,76,.18); }
+  .cert-badge.han { background: rgba(241,90,34,.2); }
   .cert-name { font-size: .875rem; font-weight: 500; color: rgba(255,255,255,.85); }
 
   /* ── CONTACT ───────────────────────────────────────── */
@@ -597,13 +598,16 @@
     .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
     .hero-card { max-width: 420px; }
     .about-grid { grid-template-columns: 1fr; }
-    .cert-groups { grid-template-columns: 1fr; }
+    .cert-groups { grid-template-columns: 1fr 1fr; }
+    .cert-groups > div:last-child { grid-column: 1 / -1; }
   }
   @media (max-width: 640px) {
     nav { padding: 0 5%; }
     .nav-links { gap: 1.2rem; }
     .nav-links a { font-size: .75rem; }
     section { padding: 70px 5%; }
+    .cert-groups { grid-template-columns: 1fr; }
+    .cert-groups > div:last-child { grid-column: auto; }
   }
 </style>
 </head>
@@ -1111,6 +1115,33 @@
         <div class="cert-item">
           <div class="cert-badge net">🌐</div>
           <div class="cert-name">Cisco – Networking Devices &amp; Initial Configuration</div>
+        </div>
+      </div>
+      <div>
+        <div class="cert-group-title">Hanwha Vision</div>
+        <div class="cert-item">
+          <div class="cert-badge han">📷</div>
+          <div class="cert-name">Network Camera Advanced</div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-badge han">🎬</div>
+          <div class="cert-name">Wisenet WAVE VMS Advanced</div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-badge han">🖥️</div>
+          <div class="cert-name">Wisenet SSM Advanced</div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-badge han">🔧</div>
+          <div class="cert-name">Wisenet Toolbox PLUS</div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-badge han">📟</div>
+          <div class="cert-name">Decoder</div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-badge han">🔒</div>
+          <div class="cert-name">Cybersecurity Certification</div>
         </div>
       </div>
     </div>
