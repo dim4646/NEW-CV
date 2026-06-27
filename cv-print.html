@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dimokritos Kallionakis – CV</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --navy: #0d1f3c;
+    --navy-mid: #162d52;
+    --gold: #c9a84c;
+    --gold-light: #e8c97a;
+    --text: #111827;
+    --muted: #4b5563;
+    --border: #d1d9e6;
+    --bg-light: #f7f8fc;
+  }
+
+  html, body {
+    font-family: 'DM Sans', Arial, sans-serif;
+    font-size: 9.5pt;
+    color: var(--text);
+    background: white;
+    line-height: 1.5;
+  }
+
+  /* ── PAGE ── */
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    background: white;
+  }
+
+  /* ── HEADER ── */
+  .cv-header {
+    background: var(--navy);
+    color: white;
+    padding: 22px 28px 18px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+    align-items: end;
+  }
+  .cv-name {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 28pt;
+    font-weight: 700;
+    color: white;
+    line-height: 1.1;
+    letter-spacing: -.5px;
+  }
+  .cv-name span { color: var(--gold-light); }
+  .cv-title {
+    font-size: 9.5pt;
+    font-weight: 500;
+    color: rgba(255,255,255,.75);
+    margin-top: 4px;
+    letter-spacing: .03em;
+  }
+  .cv-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: flex-end;
+  }
+  .cv-contact a, .cv-contact span {
+    color: rgba(255,255,255,.85);
+    text-decoration: none;
+    font-size: 8.5pt;
+  }
+
+  /* ── BODY LAYOUT ── */
+  .cv-body {
+    display: grid;
+    grid-template-columns: 1fr 2.2fr;
+    gap: 0;
+  }
+
+  /* ── LEFT SIDEBAR ── */
+  .cv-sidebar {
+    background: var(--bg-light);
+    border-right: 1px solid var(--border);
+    padding: 20px 18px;
+  }
+
+  /* ── MAIN CONTENT ── */
+  .cv-main {
+    padding: 20px 24px;
+  }
+
+  /* ── SECTION ── */
+  .section { margin-bottom: 18px; }
+  .section:last-child { margin-bottom: 0; }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 11pt;
+    font-weight: 700;
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 3px;
+    margin-bottom: 10px;
+  }
+
+  /* ── SUMMARY ── */
+  .summary p {
+    color: var(--muted);
+    font-size: 8.5pt;
+    margin-bottom: 5px;
+    line-height: 1.55;
+  }
+
+  /* ── EXPERIENCE ── */
+  .job { margin-bottom: 14px; }
+  .job:last-child { margin-bottom: 0; }
+  .job-header { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+  .job-role {
+    font-weight: 600;
+    font-size: 9.5pt;
+    color: var(--navy);
+  }
+  .job-period {
+    font-size: 8pt;
+    color: var(--gold);
+    font-weight: 600;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .job-company {
+    font-size: 8.5pt;
+    color: var(--muted);
+    margin-top: 1px;
+  }
+  .job-location {
+    font-size: 7.5pt;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .job-list {
+    list-style: none;
+    padding: 0;
+  }
+  .job-list li {
+    font-size: 8pt;
+    color: var(--muted);
+    line-height: 1.5;
+    padding-left: 10px;
+    position: relative;
+    margin-bottom: 2px;
+  }
+  .job-list li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-size: 7pt;
+  }
+
+  /* ── SKILLS SIDEBAR ── */
+  .skill-group { margin-bottom: 14px; }
+  .skill-group-name {
+    font-size: 7.5pt;
+    font-weight: 600;
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    margin-bottom: 5px;
+  }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 3px; }
+  .skill-tag {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 1px 6px;
+    font-size: 7.5pt;
+    color: var(--text);
+  }
+
+  /* ── CERTIFICATIONS ── */
+  .cert-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    margin-bottom: 5px;
+  }
+  .cert-dot {
+    width: 5px;
+    height: 5px;
+    background: var(--gold);
+    border-radius: 50%;
+    margin-top: 5px;
+    flex-shrink: 0;
+  }
+  .cert-name {
+    font-size: 8pt;
+    color: var(--text);
+    line-height: 1.4;
+  }
+  .cert-issuer {
+    font-size: 7pt;
+    color: var(--muted);
+  }
+
+  /* ── STATS ── */
+  .stats-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+  .stat-box {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 7px 8px;
+    text-align: center;
+  }
+  .stat-num {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 16pt;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1;
+  }
+  .stat-num span { font-size: 10pt; }
+  .stat-label {
+    font-size: 6.5pt;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    margin-top: 2px;
+  }
+
+  /* ── LANGUAGES ── */
+  .lang-row { margin-bottom: 6px; }
+  .lang-name { font-size: 8pt; font-weight: 500; color: var(--text); }
+  .lang-bar-wrap {
+    height: 4px;
+    background: var(--border);
+    border-radius: 2px;
+    margin: 2px 0;
+  }
+  .lang-bar {
+    height: 100%;
+    background: var(--gold);
+    border-radius: 2px;
+  }
+  .lang-level { font-size: 7pt; color: var(--muted); }
+
+  /* ── DIVIDER ── */
+  .job-divider { border: none; border-top: 1px solid var(--border); margin: 12px 0; }
+
+  @media print {
+    html, body { font-size: 9.5pt; }
+    .page { margin: 0; width: 100%; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="cv-header">
+    <div>
+      <div class="cv-name">Dimokritos <span>Kallionakis</span></div>
+      <div class="cv-title">Senior Security Service &amp; Surveillance Technician · Gold Coast, QLD, Australia</div>
+    </div>
+    <div class="cv-contact">
+      <span>📞 0426 917 342</span>
+      <a href="mailto:dimokritos.k@gmail.com">dimokritos.k@gmail.com</a>
+      <a href="https://www.linkedin.com/in/dimos-k-691979b5">linkedin.com/in/dimos-k</a>
+      <span>English &amp; Greek</span>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="cv-body">
+
+    <!-- SIDEBAR -->
+    <div class="cv-sidebar">
+
+      <!-- STATS -->
+      <div class="section">
+        <div class="stats-row">
+          <div class="stat-box">
+            <div class="stat-num">20<span>+</span></div>
+            <div class="stat-label">Years Exp.</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">5<span>+</span></div>
+            <div class="stat-label">Platforms</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">13</div>
+            <div class="stat-label">Certs</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">3</div>
+            <div class="stat-label">Countries</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SKILLS -->
+      <div class="section">
+        <div class="section-title">Skills</div>
+
+        <div class="skill-group">
+          <div class="skill-group-name">CCTV &amp; Surveillance</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Dahua</span>
+            <span class="skill-tag">AXIS</span>
+            <span class="skill-tag">Hikvision</span>
+            <span class="skill-tag">Wisenet</span>
+            <span class="skill-tag">Vivotek</span>
+            <span class="skill-tag">Nx Witness</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-name">Access Control &amp; Intercom</div>
+          <div class="skill-tags">
+            <span class="skill-tag">ICT Protege WX</span>
+            <span class="skill-tag">Inner Range</span>
+            <span class="skill-tag">Urmet IP</span>
+            <span class="skill-tag">Dnake</span>
+            <span class="skill-tag">FDi Systems</span>
+            <span class="skill-tag">Ubiquiti</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-name">Networking</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Cisco</span>
+            <span class="skill-tag">Fortinet</span>
+            <span class="skill-tag">MikroTik</span>
+            <span class="skill-tag">TP-Link</span>
+            <span class="skill-tag">SD-WAN</span>
+            <span class="skill-tag">VLANs</span>
+            <span class="skill-tag">VPN / Firewall</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-name">Field &amp; Service</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Fault Diagnosis</span>
+            <span class="skill-tag">Preventative Maintenance</span>
+            <span class="skill-tag">Camera Optimisation</span>
+            <span class="skill-tag">WHS Compliance</span>
+            <span class="skill-tag">Technical Reporting</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-name">Enterprise</div>
+          <div class="skill-tags">
+            <span class="skill-tag">High-Availability Sites</span>
+            <span class="skill-tag">Live System Maintenance</span>
+            <span class="skill-tag">Regulated Environments</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CERTIFICATIONS -->
+      <div class="section">
+        <div class="section-title">Certifications</div>
+
+        <div class="skill-group-name" style="margin-bottom:5px;">Security &amp; Surveillance</div>
+        <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-name">ICT Protege WX</div></div></div>
+        <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-name">Inner Range Integriti</div></div></div>
+        <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-name">AXIS – Optimiser for Milestone XProtect</div></div></div>
+
+        <div class="skill-group-name" style="margin:8px 0 5px;">Networking</div>
+        <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-name">Fortinet – Getting Started in Cybersecurity 2.0</div></div></div>
+        <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-name">Cisco – Introduction to Cybersecurity</div></div></div>
+        <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-name">Cisco – Networking Basics</div></div></div>
+        <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-name">Cisco – Networking Devices &amp; Initial Configuration</div></div></div>
+
+        <div class="skill-group-name" style="margin:8px 0 5px;">Hanwha Vision</div>
+        <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-name">Network Camera Advanced</div></div></div>
+        <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-name">Wisenet WAVE VMS Advanced</div></div></div>
+        <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-name">Wisenet SSM Advanced</div></div></div>
+        <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-name">Wisenet Toolbox PLUS</div></div></div>
+        <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-name">Decoder</div></div></div>
+        <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-name">Cybersecurity Certification</div></div></div>
+      </div>
+
+      <!-- LANGUAGES -->
+      <div class="section">
+        <div class="section-title">Languages</div>
+        <div class="lang-row">
+          <div class="lang-name">Greek</div>
+          <div class="lang-bar-wrap"><div class="lang-bar" style="width:100%"></div></div>
+          <div class="lang-level">Native</div>
+        </div>
+        <div class="lang-row">
+          <div class="lang-name">English</div>
+          <div class="lang-bar-wrap"><div class="lang-bar" style="width:80%"></div></div>
+          <div class="lang-level">Professional</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="cv-main">
+
+      <!-- SUMMARY -->
+      <div class="section summary">
+        <div class="section-title">Professional Summary</div>
+        <p>Senior Security Service &amp; Surveillance Technician with strong hands-on experience supporting live surveillance and electronic security systems in high-availability environments.</p>
+        <p>Experienced in enterprise CCTV systems, fault diagnosis, preventative maintenance and camera optimisation, with solid knowledge of IP-based video networks.</p>
+        <p>Proven ability to respond to incidents, support operational teams and maintain system reliability in regulated and continuously operating sites.</p>
+        <p>Background includes ownership of a private electronics business in Greece (2003–2015), providing a broad foundation across telecommunications, CCTV, network infrastructure and customer support.</p>
+      </div>
+
+      <!-- EXPERIENCE -->
+      <div class="section">
+        <div class="section-title">Professional Experience</div>
+
+        <div class="job">
+          <div class="job-header">
+            <div class="job-role">Senior Security Service Technician</div>
+            <div class="job-period">2023 – Jun 2026</div>
+          </div>
+          <div class="job-company">Urmet Australia (formerly Epsilon Security / SUPATECH)</div>
+          <div class="job-location">📍 Loganholme, QLD, Australia</div>
+          <ul class="job-list">
+            <li>Service, fault diagnosis and resolution of surveillance and electronic security systems across 10–30 commercial and residential sites, managing 50–100+ devices per site.</li>
+            <li>Troubleshooting and maintenance of enterprise CCTV, access control, intercom and IP network infrastructure.</li>
+            <li>Preventative maintenance including camera inspections, equipment replacement and image optimisation.</li>
+            <li>Diagnosing complex faults on live systems while maintaining continuous operation and system availability.</li>
+            <li>Providing technical support to service, network and project teams.</li>
+            <li>Preparing technical reports and documentation for management and compliance purposes.</li>
+          </ul>
+        </div>
+
+        <hr class="job-divider">
+
+        <div class="job">
+          <div class="job-header">
+            <div class="job-role">Security Service Technician</div>
+            <div class="job-period">May 2016 – May 2023</div>
+          </div>
+          <div class="job-company">Urmet Australia (Epsilon Security)</div>
+          <div class="job-location">📍 Mascot, NSW, Australia</div>
+          <ul class="job-list">
+            <li>Service and maintenance of CCTV, access control, alarm and intercom systems.</li>
+            <li>Troubleshooting IP cameras, VMS platforms and network-related issues.</li>
+            <li>Programming and support of Urmet intercom and IP-based systems.</li>
+            <li>Subcontractor on projects for Amazon, Fredon and Next Security.</li>
+            <li>Installation, testing and commissioning of surveillance and terminal devices across major residential and commercial sites in Sydney and Canberra.</li>
+          </ul>
+        </div>
+
+        <hr class="job-divider">
+
+        <div class="job">
+          <div class="job-header">
+            <div class="job-role">Owner / Electronic Systems Technician</div>
+            <div class="job-period">2003 – 2015</div>
+          </div>
+          <div class="job-company">Antenna Stores – Private Business</div>
+          <div class="job-location">📍 Heraklion, Crete, Greece</div>
+          <ul class="job-list">
+            <li>Inspection, evaluation and installation of telecommunications, antenna and alarm systems.</li>
+            <li>Installation and maintenance of CCTV systems in residential, commercial and industrial environments.</li>
+            <li>Design, implementation and maintenance of network infrastructure.</li>
+            <li>Development and deployment of broadband infrastructure at municipal level (Metropolitan Area Networks).</li>
+            <li>Configuration of high-speed Point-to-Point wireless and fibre optic links for public infrastructure.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- NOTABLE PROJECTS -->
+      <div class="section">
+        <div class="section-title">Notable Projects</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+          <div style="font-size:8pt;color:var(--muted);"><strong style="color:var(--text);">Meriton Suites Southport, Gold Coast</strong><br>280+ camera upgrade to Nx Witness across 55-storey tower</div>
+          <div style="font-size:8pt;color:var(--muted);"><strong style="color:var(--text);">Granville Place, NSW</strong><br>618 apartments, three-tower residential &amp; retail development</div>
+          <div style="font-size:8pt;color:var(--muted);"><strong style="color:var(--text);">Burwood Grand, NSW</strong><br>$500M mixed-use development, three residential towers, 1,000+ residents</div>
+          <div style="font-size:8pt;color:var(--muted);"><strong style="color:var(--text);">WOVA, Canberra ACT</strong><br>Four-tower, 800+ apartment mixed-use precinct</div>
+          <div style="font-size:8pt;color:var(--muted);"><strong style="color:var(--text);">Marina Square, NSW</strong><br>765 apartments across 7 buildings, waterfront town centre</div>
+          <div style="font-size:8pt;color:var(--muted);"><strong style="color:var(--text);">Marella by Mosaic, Gold Coast</strong><br>30-storey luxury residential tower, Broadbeach</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</body>
+</html>
