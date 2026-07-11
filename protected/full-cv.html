@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Dimokritos Kallionakis – Full Contact &amp; CV</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --navy: #0d1f3c; --navy-mid: #162d52; --navy-light: #1e3e6e;
+    --gold: #c9a84c; --gold-light: #e8c97a;
+    --white: #ffffff; --off-white: #f7f8fc;
+    --radius: 12px; --transition: .35s cubic-bezier(.4,0,.2,1);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: linear-gradient(145deg, var(--navy) 0%, var(--navy-mid) 55%, var(--navy-light) 100%);
+    color: var(--white);
+    min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    padding: 40px 6%;
+  }
+  .card {
+    max-width: 560px; width: 100%;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(201,168,76,.25);
+    border-radius: 16px;
+    padding: 2.5rem;
+  }
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem; color: var(--gold-light);
+    margin-bottom: .3rem;
+  }
+  .sub { color: rgba(255,255,255,.6); font-size: .9rem; margin-bottom: 2rem; }
+  .row {
+    display: flex; align-items: flex-start; gap: .85rem;
+    margin-bottom: 1.1rem; font-size: .95rem;
+  }
+  .icon {
+    width: 34px; height: 34px; border-radius: 8px;
+    background: rgba(201,168,76,.15);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; font-size: .9rem;
+  }
+  a { color: rgba(255,255,255,.9); text-decoration: none; }
+  a:hover { color: var(--gold-light); }
+  .download-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    margin-top: 1.5rem;
+    padding: 12px 26px;
+    background: var(--gold); color: var(--navy);
+    font-weight: 600; font-size: .85rem;
+    border-radius: var(--radius);
+    transition: background var(--transition), transform var(--transition);
+  }
+  .download-btn:hover { background: var(--gold-light); transform: translateY(-2px); }
+  .back { display: inline-block; margin-top: 2rem; font-size: .82rem; color: rgba(255,255,255,.5); }
+</style>
+</head>
+<body>
+  <div class="card">
+    <h1>Dimokritos Kallionakis</h1>
+    <div class="sub">Full contact details &amp; CV</div>
+
+    <div class="row"><div class="icon">📞</div><div><a href="tel:0426917342">0426 917 342</a></div></div>
+    <div class="row"><div class="icon">✉️</div><div><a href="mailto:dimokritos.k@gmail.com">dimokritos.k@gmail.com</a></div></div>
+    <div class="row"><div class="icon">📍</div><div>Gold Coast, QLD<br>Australia</div></div>
+    <div class="row"><div class="icon">🔗</div><div><a href="https://www.linkedin.com/in/dimos-k-691979b5" target="_blank" rel="noopener">linkedin.com/in/dimos-k</a></div></div>
+
+    <a class="download-btn" href="Dimokritos_Kallionakis_CV.pdf" download>⬇️ Download Full CV (PDF)</a>
+    <br>
+    <a class="back" href="/">← Back to portfolio</a>
+  </div>
+</body>
+</html>

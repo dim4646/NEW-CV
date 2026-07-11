@@ -587,6 +587,49 @@
   }
   footer span { color: var(--gold-light); }
 
+  /* ── ACCESS MODAL ──────────────────────────────────── */
+  .access-overlay {
+    display: none;
+    position: fixed; inset: 0; z-index: 1000;
+    background: rgba(13,31,60,.75);
+    backdrop-filter: blur(4px);
+    align-items: center; justify-content: center;
+    padding: 20px;
+  }
+  .access-overlay.open { display: flex; }
+  .access-modal {
+    background: var(--navy-mid);
+    border: 1px solid rgba(201,168,76,.3);
+    border-radius: 16px;
+    max-width: 420px; width: 100%;
+    padding: 2rem;
+    color: var(--white);
+  }
+  .access-modal h3 {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--gold-light); font-size: 1.3rem; margin-bottom: .5rem;
+  }
+  .access-modal p { color: rgba(255,255,255,.7); font-size: .88rem; margin-bottom: 1.25rem; }
+  .access-modal input[type="email"] {
+    width: 100%; padding: 12px 14px;
+    border-radius: 8px; border: 1px solid rgba(201,168,76,.3);
+    background: rgba(255,255,255,.06); color: var(--white);
+    font-size: .9rem; margin-bottom: 1rem;
+  }
+  .access-modal input[type="email"]::placeholder { color: rgba(255,255,255,.4); }
+  .access-actions { display: flex; gap: .75rem; }
+  .access-submit, .access-cancel {
+    flex: 1; padding: 10px 18px; border-radius: var(--radius);
+    font-weight: 600; font-size: .85rem; cursor: pointer; border: none;
+  }
+  .access-submit { background: var(--gold); color: var(--navy); }
+  .access-submit:hover { background: var(--gold-light); }
+  .access-submit:disabled { opacity: .6; cursor: default; }
+  .access-cancel { background: transparent; border: 1px solid rgba(255,255,255,.2); color: rgba(255,255,255,.8); }
+  .access-status { font-size: .85rem; margin-top: .9rem; min-height: 1.2em; }
+  .access-status.ok { color: #7ee0a8; }
+  .access-status.err { color: #f19e9e; }
+
   /* ── ANIMATIONS ────────────────────────────────────── */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
@@ -641,18 +684,10 @@
         <span class="badge">Cisco Certified</span>
         <span class="badge">Fortinet Certified</span>
       </div>
-      <a class="download-cv-btn" href="Dimokritos_Kallionakis_CV.pdf" download>⬇️ Download CV (PDF)</a>
+      <a class="download-cv-btn request-access-trigger" href="#" role="button">🔒 Request Full CV &amp; Contact Details</a>
     </div>
     <div class="hero-card">
       <div class="hero-card-title">Contact Details</div>
-      <div class="contact-row">
-        <div class="contact-icon">📞</div>
-        <div><a href="tel:0426917342">0426 917 342</a></div>
-      </div>
-      <div class="contact-row">
-        <div class="contact-icon">✉️</div>
-        <div><a href="mailto:dimokritos.k@gmail.com">dimokritos.k@gmail.com</a></div>
-      </div>
       <div class="contact-row">
         <div class="contact-icon">📍</div>
         <div>Gold Coast, QLD<br>Australia</div>
@@ -664,6 +699,10 @@
       <div class="contact-row">
         <div class="contact-icon">🌐</div>
         <div>English &amp; Greek</div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">🔒</div>
+        <div><a href="#" class="request-access-trigger">Phone &amp; email — request access</a></div>
       </div>
       <div style="border-top:1px solid rgba(201,168,76,.25);margin:1rem 0 .75rem;"></div>
       <div style="font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-light);margin-bottom:.6rem;">Licence</div>
@@ -1188,16 +1227,6 @@
     </div>
     <div class="contact-grid">
       <div class="contact-card">
-        <span class="contact-card-icon">📞</span>
-        <div class="contact-card-label">Phone</div>
-        <div class="contact-card-value"><a href="tel:0426917342">0426 917 342</a></div>
-      </div>
-      <div class="contact-card">
-        <span class="contact-card-icon">✉️</span>
-        <div class="contact-card-label">Email</div>
-        <div class="contact-card-value"><a href="mailto:dimokritos.k@gmail.com">dimokritos.k@gmail.com</a></div>
-      </div>
-      <div class="contact-card">
         <span class="contact-card-icon">📍</span>
         <div class="contact-card-label">Location</div>
         <div class="contact-card-value">Gold Coast, QLD<br>Australia</div>
@@ -1212,6 +1241,11 @@
         <div class="contact-card-label">LinkedIn</div>
         <div class="contact-card-value"><a href="https://www.linkedin.com/in/dimos-k-691979b5" target="_blank" rel="noopener">linkedin.com/in/dimos-k</a></div>
       </div>
+      <div class="contact-card">
+        <span class="contact-card-icon">🔒</span>
+        <div class="contact-card-label">Phone, Email &amp; CV</div>
+        <div class="contact-card-value"><a href="#" class="request-access-trigger">Request access</a></div>
+      </div>
     </div>
   </div>
 </section>
@@ -1220,6 +1254,20 @@
 <footer>
   © 2025 <span>Dimokritos Kallionakis</span> · Senior Security Service &amp; Surveillance Technician · Gold Coast, QLD
 </footer>
+
+<!-- ACCESS REQUEST MODAL -->
+<div class="access-overlay" id="access-overlay">
+  <div class="access-modal">
+    <h3>Request Access</h3>
+    <p>This section contains sensitive contact details and the full CV. Please enter your email — I'll send you a private access link.</p>
+    <input type="email" id="access-email" placeholder="you@company.com" autocomplete="email" />
+    <div class="access-actions">
+      <button class="access-cancel" id="access-cancel" type="button">Cancel</button>
+      <button class="access-submit" id="access-submit" type="button">Send Link</button>
+    </div>
+    <div class="access-status" id="access-status"></div>
+  </div>
+</div>
 
 <script>
   // Scroll reveal
@@ -1247,6 +1295,72 @@
   document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('region-sydney').classList.add('open');
   });
+
+  // Access request modal
+  const overlay = document.getElementById('access-overlay');
+  const emailInput = document.getElementById('access-email');
+  const submitBtn = document.getElementById('access-submit');
+  const cancelBtn = document.getElementById('access-cancel');
+  const statusEl = document.getElementById('access-status');
+
+  function openModal() {
+    overlay.classList.add('open');
+    statusEl.textContent = '';
+    statusEl.className = 'access-status';
+    emailInput.value = '';
+    emailInput.focus();
+  }
+  function closeModal() { overlay.classList.remove('open'); }
+
+  document.querySelectorAll('.request-access-trigger').forEach(el => {
+    el.addEventListener('click', (e) => { e.preventDefault(); openModal(); });
+  });
+  cancelBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', (e) => { if (e.target === overlay) closeModal(); });
+
+  async function submitAccessRequest() {
+    const email = emailInput.value.trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      statusEl.textContent = 'Please enter a valid email address.';
+      statusEl.className = 'access-status err';
+      return;
+    }
+    submitBtn.disabled = true;
+    statusEl.textContent = 'Sending...';
+    statusEl.className = 'access-status';
+    try {
+      const res = await fetch('/.netlify/functions/request-access', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+      const data = await res.json();
+      if (res.ok && data.ok) {
+        statusEl.textContent = 'Check your inbox — the access link is on its way.';
+        statusEl.className = 'access-status ok';
+      } else {
+        statusEl.textContent = data.error || 'Something went wrong, please try again.';
+        statusEl.className = 'access-status err';
+      }
+    } catch {
+      statusEl.textContent = 'Network error, please try again.';
+      statusEl.className = 'access-status err';
+    } finally {
+      submitBtn.disabled = false;
+    }
+  }
+  submitBtn.addEventListener('click', submitAccessRequest);
+  emailInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') submitAccessRequest(); });
+
+  // Auto-open modal if redirected here needing access
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('access') === 'required' || params.get('access') === 'expired') {
+    openModal();
+    if (params.get('access') === 'expired') {
+      statusEl.textContent = 'Your previous link expired — request a new one.';
+      statusEl.className = 'access-status err';
+    }
+  }
 </script>
 </body>
 </html>
