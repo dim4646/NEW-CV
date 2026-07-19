@@ -485,6 +485,34 @@
   }
   .project-card-link:hover { color: var(--white); }
 
+  /* ── LOCKED TEASER (gated sections) ──────────────────── */
+  .locked-teaser {
+    border: 1px solid rgba(201,168,76,.25);
+    border-radius: var(--radius);
+    background: rgba(255,255,255,.04);
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+  .locked-teaser .locked-icon { font-size: 2rem; margin-bottom: 1rem; }
+  .locked-teaser .locked-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 700; color: var(--white);
+    margin-bottom: .6rem;
+  }
+  .locked-teaser .locked-desc {
+    font-size: .9rem; color: rgba(255,255,255,.65); font-weight: 300;
+    max-width: 460px; margin: 0 auto 1.5rem; line-height: 1.6;
+  }
+  .locked-teaser .locked-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 28px;
+    background: var(--gold); color: var(--navy);
+    font-weight: 600; font-size: .85rem;
+    border-radius: var(--radius);
+    transition: background var(--transition), transform var(--transition);
+  }
+  .locked-teaser .locked-btn:hover { background: var(--gold-light); transform: translateY(-2px); color: var(--navy); }
+
   /* ── CERTIFICATIONS ────────────────────────────────── */
   #certifications {
     background: linear-gradient(165deg, var(--navy) 0%, var(--navy-mid) 100%);
@@ -587,6 +615,49 @@
   }
   footer span { color: var(--gold-light); }
 
+  /* ── ACCESS MODAL ──────────────────────────────────── */
+  .access-overlay {
+    display: none;
+    position: fixed; inset: 0; z-index: 1000;
+    background: rgba(13,31,60,.75);
+    backdrop-filter: blur(4px);
+    align-items: center; justify-content: center;
+    padding: 20px;
+  }
+  .access-overlay.open { display: flex; }
+  .access-modal {
+    background: var(--navy-mid);
+    border: 1px solid rgba(201,168,76,.3);
+    border-radius: 16px;
+    max-width: 420px; width: 100%;
+    padding: 2rem;
+    color: var(--white);
+  }
+  .access-modal h3 {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--gold-light); font-size: 1.3rem; margin-bottom: .5rem;
+  }
+  .access-modal p { color: rgba(255,255,255,.7); font-size: .88rem; margin-bottom: 1.25rem; }
+  .access-modal input[type="email"] {
+    width: 100%; padding: 12px 14px;
+    border-radius: 8px; border: 1px solid rgba(201,168,76,.3);
+    background: rgba(255,255,255,.06); color: var(--white);
+    font-size: .9rem; margin-bottom: 1rem;
+  }
+  .access-modal input[type="email"]::placeholder { color: rgba(255,255,255,.4); }
+  .access-actions { display: flex; gap: .75rem; }
+  .access-submit, .access-cancel {
+    flex: 1; padding: 10px 18px; border-radius: var(--radius);
+    font-weight: 600; font-size: .85rem; cursor: pointer; border: none;
+  }
+  .access-submit { background: var(--gold); color: var(--navy); }
+  .access-submit:hover { background: var(--gold-light); }
+  .access-submit:disabled { opacity: .6; cursor: default; }
+  .access-cancel { background: transparent; border: 1px solid rgba(255,255,255,.2); color: rgba(255,255,255,.8); }
+  .access-status { font-size: .85rem; margin-top: .9rem; min-height: 1.2em; }
+  .access-status.ok { color: #7ee0a8; }
+  .access-status.err { color: #f19e9e; }
+
   /* ── ANIMATIONS ────────────────────────────────────── */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
@@ -641,18 +712,10 @@
         <span class="badge">Cisco Certified</span>
         <span class="badge">Fortinet Certified</span>
       </div>
-      <a class="download-cv-btn" href="Dimokritos_Kallionakis_CV.pdf" download>⬇️ Download CV (PDF)</a>
+      <a class="download-cv-btn request-access-trigger" href="#" role="button">🔒 Request Full CV &amp; Contact Details</a>
     </div>
     <div class="hero-card">
       <div class="hero-card-title">Contact Details</div>
-      <div class="contact-row">
-        <div class="contact-icon">📞</div>
-        <div><a href="tel:0426917342">0426 917 342</a></div>
-      </div>
-      <div class="contact-row">
-        <div class="contact-icon">✉️</div>
-        <div><a href="mailto:dimokritos.k@gmail.com">dimokritos.k@gmail.com</a></div>
-      </div>
       <div class="contact-row">
         <div class="contact-icon">📍</div>
         <div>Gold Coast, QLD<br>Australia</div>
@@ -664,6 +727,10 @@
       <div class="contact-row">
         <div class="contact-icon">🌐</div>
         <div>English &amp; Greek</div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">🔒</div>
+        <div><a href="#" class="request-access-trigger">Phone &amp; email — request access</a></div>
       </div>
       <div style="border-top:1px solid rgba(201,168,76,.25);margin:1rem 0 .75rem;"></div>
       <div style="font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-light);margin-bottom:.6rem;">Licence</div>
@@ -846,63 +913,11 @@
       <h2 class="section-title">Professional Experience</h2>
       <div class="divider"></div>
     </div>
-    <div class="timeline">
-
-      <div class="tl-item">
-        <div class="tl-dot current"></div>
-        <div class="tl-header">
-          <div class="tl-role">Senior Security Service Technician</div>
-          <div class="tl-period">2023 – Jun 2026</div>
-        </div>
-        <div class="tl-company">Urmet Australia (formerly Epsilon Security / SUPATECH)</div>
-        <div class="tl-location">📍 Loganholme, QLD, Australia</div>
-        <ul class="tl-list">
-          <li>Service, fault diagnosis and resolution of surveillance and electronic security systems across 10–30 commercial and residential sites, managing 50–100+ devices per site on average.</li>
-          <li>Troubleshooting and maintenance of enterprise CCTV / surveillance, access control, intercom and IP network infrastructure.</li>
-          <li>Preventative maintenance including camera inspections, equipment replacement, system adjustments and image optimisation.</li>
-          <li>Diagnosing complex faults on live systems while maintaining continuous operation and system availability.</li>
-          <li>Providing technical support to service, network and project teams.</li>
-          <li>Preparing technical reports and documentation for management and compliance purposes.</li>
-        </ul>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="tl-header">
-          <div class="tl-role">Security Service Technician</div>
-          <div class="tl-period">May 2016 – May 2023</div>
-        </div>
-        <div class="tl-company">Urmet Australia (Epsilon Security)</div>
-        <div class="tl-location">📍 Mascot, NSW, Australia</div>
-        <ul class="tl-list">
-          <li>Service and maintenance of CCTV / surveillance, access control, alarm and intercom systems.</li>
-          <li>Troubleshooting IP cameras, VMS platforms and network-related issues.</li>
-          <li>Programming and support of Urmet intercom and IP-based systems.</li>
-          <li>Supporting operational teams and service activities across multiple large sites.</li>
-          <li>Subcontractor on projects for Amazon, Fredon and Next Security.</li>
-          <li>Installation, testing and commissioning of surveillance and terminal devices.</li>
-        </ul>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="tl-header">
-          <div class="tl-role">Owner / Electronic Systems Technician</div>
-          <div class="tl-period">2003 – 2015</div>
-        </div>
-        <div class="tl-company">Antenna Stores – Private Business</div>
-        <div class="tl-location">📍 Heraklion, Crete, Greece</div>
-        <ul class="tl-list">
-          <li>Inspection, evaluation and installation of telecommunications, antenna and alarm systems.</li>
-          <li>Installation and maintenance of CCTV systems in residential, commercial and industrial environments.</li>
-          <li>Design, implementation and maintenance of network infrastructure.</li>
-          <li>End-to-end technical support and customer management.</li>
-          <li>Development and deployment of broadband infrastructure at municipal level, with specialisation in Metropolitan Area Networks (MAN).</li>
-          <li>Configuration and installation of high-speed Point-to-Point (P2P) links via wireless networks and fibre optics, for interconnecting municipal buildings and public infrastructure.</li>
-          <li>Technical support, signal optimisation and maintenance of urban network connections.</li>
-        </ul>
-      </div>
-
+    <div class="locked-teaser">
+      <div class="locked-icon">🔒</div>
+      <div class="locked-title">20+ years across 3 roles</div>
+      <p class="locked-desc">Owner/Technician (2003–2015, Greece) → Security Service Technician (2016–2023, Sydney) → Senior Security Service Technician (2023–present, Gold Coast). Full role history, responsibilities and achievements available on request.</p>
+      <a href="#" class="request-access-trigger locked-btn">🔓 Request Access</a>
     </div>
   </div>
 </section>
@@ -916,181 +931,11 @@
       <div class="divider"></div>
     </div>
 
-    <div class="region-group" id="region-sydney">
-      <button class="region-toggle" onclick="toggleRegion('region-sydney')">
-        <span>Sydney, NSW <span class="region-count">8 Projects</span></span>
-        <span class="chevron">▾</span>
-      </button>
-      <div class="region-body">
-        <div class="projects-grid">
-          <div class="project-card">
-            <div class="project-card-title">Opal Tower — Sydney Olympic Park</div>
-            <div class="project-card-meta">📍 Sydney, NSW &nbsp;|&nbsp; Epsilon Security, 2016–2023</div>
-            <div class="project-card-desc">Combined service across CCTV/surveillance, access control, intercom and network infrastructure for one of Sydney Olympic Park's landmark high-rise residential towers — a high-availability, high-occupancy site requiring continuous system uptime.</div>
-            <a class="project-card-link" href="https://icon.co/projects/opal-tower/" target="_blank" rel="noopener">View Building →</a>
-          </div>
-          <div class="project-card">
-            <div class="project-card-title">Granville Place — Granville, NSW</div>
-            <div class="project-card-meta">📍 Granville, NSW &nbsp;|&nbsp; Epsilon Security, 2016–2023</div>
-            <div class="project-card-desc">Combined service across CCTV/surveillance, access control, intercom and network infrastructure for a major 618-apartment, three-tower residential and retail development — coordinating system reliability across multiple buildings on a single large-scale site.</div>
-            <a class="project-card-link" href="https://www.parkview.com.au/projects/granville-place" target="_blank" rel="noopener">View Building →</a>
-          </div>
-          <div class="project-card">
-            <div class="project-card-title">Burwood Grand — Burwood, NSW</div>
-            <div class="project-card-meta">📍 Burwood, NSW &nbsp;|&nbsp; Epsilon Security, 2016–2023</div>
-            <div class="project-card-desc">Combined service across CCTV/surveillance, access control, intercom and network infrastructure for a $500M landmark mixed-use development of three residential towers, retail tenancies and council chambers — supporting over 1,000 residents on a continuously operating site.</div>
-            <a class="project-card-link" href="https://decodegroup.com.au/projects/commercial/burwood-grand/" target="_blank" rel="noopener">View Building →</a>
-          </div>
-          <div class="project-card">
-            <div class="project-card-title">Schofield Gardens — Schofields, NSW</div>
-            <div class="project-card-meta">📍 Schofields, NSW &nbsp;|&nbsp; Epsilon Security, 2016–2023</div>
-            <div class="project-card-desc">Combined service across CCTV/surveillance, access control, intercom and network infrastructure for ALAND's award-winning masterplanned residential community — a multi-stage, multi-building development supporting thousands of residents across the precinct.</div>
-            <a class="project-card-link" href="https://aland.com.au/projects/schofield-gardens/" target="_blank" rel="noopener">View Building →</a>
-          </div>
-          <div class="project-card">
-            <div class="project-card-title">Wicks Place — Marrickville, NSW</div>
-            <div class="project-card-meta">📍 Marrickville, NSW &nbsp;|&nbsp; Epsilon Security, 2016–2023</div>
-            <div class="project-card-desc">Combined service across CCTV/surveillance, access control, intercom and network infrastructure for a 270-apartment urban village across five boutique buildings, anchored by a retail precinct overlooking Wicks Park.</div>
-            <a class="project-card-link" href="https://www.toga.com.au/project/wicks-place/" target="_blank" rel="noopener">View Building →</a>
-          </div>
-          <div class="project-card">
-            <div class="project-card-title">Macquarie Rise — Macquarie Park, NSW</div>
-            <div class="project-card-meta">📍 Macquarie Park, NSW &nbsp;|&nbsp; Epsilon Security, 2016–2023</div>
-            <div class="project-card-desc">Combined service across CCTV/surveillance, access control, intercom and network infrastructure for a $400M, 268-apartment mixed-use precinct across three residential towers with retail and commercial podium.</div>
-            <a class="project-card-link" href="https://www.toga.com.au/project/macquarie-rise/" target="_blank" rel="noopener">View Building →</a>
-          </div>
-          <div class="project-card">
-            <div class="project-card-title">Highpoint — Hurstville, NSW</div>
-            <div class="project-card-meta">📍 Hurstville, NSW &nbsp;|&nbsp; Epsilon Security, 2016–2023</div>
-            <div class="project-card-desc">Combined service across CCTV/surveillance, access control, intercom and network infrastructure for a $270M, three-tower 448-apartment masterplanned community housing 800+ residents at Hurstville's highest point.</div>
-            <a class="project-card-link" href="https://www.toga.com.au/project/highpoint-hurstville/" target="_blank" rel="noopener">View Building →</a>
-          </div>
-          <div class="project-card">
-            <div class="project-card-title">Marina Square — Wentworth Point, NSW</div>
-            <div class="project-card-meta">📍 Wentworth Point, NSW &nbsp;|&nbsp; Epsilon Security, 2016–2023</div>
-            <div class="project-card-desc">Combined service across CCTV/surveillance, access control, intercom and network infrastructure for an award-winning, 765-apartment mixed-use precinct across 7 buildings above a waterfront town centre.</div>
-            <a class="project-card-link" href="https://marinasquare.com.au/" target="_blank" rel="noopener">View Building →</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="region-group" id="region-canberra">
-      <button class="region-toggle" onclick="toggleRegion('region-canberra')">
-        <span>Canberra, ACT <span class="region-count">8 Projects</span></span>
-        <span class="chevron">▾</span>
-      </button>
-      <div class="region-body">
-        <div class="projects-grid">
-          <div class="project-card">
-            <div class="project-card-title">The Establishment — Gungahlin, ACT</div>
-            <div class="project-card-meta">📍 Gungahlin, ACT &nbsp;|&nbsp; Epsilon Security, 2016–2023</div>
-            <div class="project-card-desc">Combined service across CCTV/surveillance, access control, intercom and network infrastructure for a 14-storey, 270-apartment residential tower with retail and dining precinct, in one of Canberra's fastest-growing town centres.</div>
-            <a class="project-card-link" href="https://geocon.com.au/development/the-establishment" target="_blank" rel="noopener">View Building →</a>
-          </div>
-          <div class="project-card">
-            <div class="project-card-title">WOVA — Phillip, ACT</div>
-            <div class="project-card-meta">📍 Phillip, ACT &nbsp;|&nbsp; Epsilon Security, 2016–2023</div>
-            <div class="project-card-desc">Combined service across CCTV/surveillance, access control, intercom and network infrastructure for a four-tower, 800+ apartment mixed-use precinct in the heart of the old Woden Town Centre regeneration.</div>
-            <a class="project-card-link" href="https://geocon.com.au/development/wova" target="_blank" rel="noopener">View Building →</a>
-          </div>
-          <div class="project-card">
-            <div class="project-card-title">Aspen Village — Greenway, ACT</div>
-            <div class="project-card-meta">📍 Greenway, ACT &nbsp;|&nbsp; Epsilon Security, 2016–2023</div>
-            <div class="project-card-desc">Combined service across CCTV/surveillance, access control, intercom and network infrastructure for Tuggeranong's first true mixed-use precinct — 570+ apartments and over 30 commercial tenancies serving 3,000+ residents.</div>
-            <a class="project-card-link" href="https://geocon.com.au/development/aspen" target="_blank" rel="noopener">View Building →</a>
-          </div>
-          <div class="project-card">
-            <div class="project-card-title">Metropol — Canberra City, ACT</div>
-            <div class="project-card-meta">📍 Canberra City, ACT &nbsp;|&nbsp; Epsilon Security, 2016–2023</div>
-            <div class="project-card-desc">Combined service across CCTV/surveillance, access control, intercom and network infrastructure for a premium three-building residential complex in Canberra's CBD, including a shared resident's penthouse and rooftop terraces.</div>
-            <a class="project-card-link" href="https://geocon.com.au/development/metropol" target="_blank" rel="noopener">View Building →</a>
-          </div>
-          <div class="project-card">
-            <div class="project-card-title">The Sullivan — Lyneham, ACT</div>
-            <div class="project-card-meta">📍 Lyneham, ACT &nbsp;|&nbsp; Epsilon Security, 2016–2023</div>
-            <div class="project-card-desc">Combined service across CCTV/surveillance, access control, intercom and network infrastructure for a 176-apartment, nine-storey residential building along Northbourne Avenue, part of the Northbourne Village precinct.</div>
-            <a class="project-card-link" href="https://www.jwlandconstruction.com.au/projects/the-sullivan-at-northbourne-village" target="_blank" rel="noopener">View Building →</a>
-          </div>
-          <div class="project-card">
-            <div class="project-card-title">W2 — Woden, ACT</div>
-            <div class="project-card-meta">📍 Phillip, ACT &nbsp;|&nbsp; Epsilon Security, 2016–2023</div>
-            <div class="project-card-desc">Combined service across CCTV/surveillance, access control, intercom and network infrastructure for a 24-storey, 222-apartment residential tower in the heart of Woden Town Centre.</div>
-            <a class="project-card-link" href="https://ftigroup.com.au/projects/australian-capital-territory/w2-woden/" target="_blank" rel="noopener">View Building →</a>
-          </div>
-          <div class="project-card">
-            <div class="project-card-title">Molonglo Falls — Coombs, ACT</div>
-            <div class="project-card-meta">📍 Coombs, ACT &nbsp;|&nbsp; Epsilon Security, 2016–2023</div>
-            <div class="project-card-desc">Combined service across CCTV/surveillance, access control, intercom and network infrastructure for a 129-residence development in the Molonglo Valley, 10km from Canberra CBD — featuring a striking architectural design with central atrium and waterfall feature.</div>
-            <a class="project-card-link" href="https://zapari.com.au/projects/molonglo-falls/" target="_blank" rel="noopener">View Building →</a>
-          </div>
-          <div class="project-card">
-            <div class="project-card-title">Limited Edition — Denman Prospect, ACT</div>
-            <div class="project-card-meta">📍 Denman Prospect, ACT &nbsp;|&nbsp; Epsilon Security, 2016–2023</div>
-            <div class="project-card-desc">Combined service across CCTV/surveillance, access control, intercom and network infrastructure for a boutique residential development comprising 1, 2 &amp; 3 bedroom apartments and 3 &amp; 4 bedroom townhouses, elevated with views over the Molonglo River corridor and Denman parkland.</div>
-            <a class="project-card-link" href="https://coredev.com.au/projects/limited-edition/" target="_blank" rel="noopener">View Building →</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="region-group" id="region-queensland">
-      <button class="region-toggle" onclick="toggleRegion('region-queensland')">
-        <span>Queensland, QLD <span class="region-count">8 Projects</span></span>
-        <span class="chevron">▾</span>
-      </button>
-      <div class="region-body">
-        <div class="projects-grid">
-          <div class="project-card">
-            <div class="project-card-title">Marella by Mosaic — Broadbeach, Gold Coast</div>
-            <div class="project-card-meta">📍 Broadbeach, QLD &nbsp;|&nbsp; Urmet Australia, 2025–Jun 2026</div>
-            <div class="project-card-desc">Combined service across CCTV/surveillance, access control, intercom and network infrastructure for a 30-storey luxury residential tower with hotel-style amenities, overlooking the Gold Coast's Broadbeach coastline.</div>
-            <a class="project-card-link" href="https://mosaicproperty.com.au/developments/marella/" target="_blank" rel="noopener">View Building →</a>
-          </div>
-          <div class="project-card">
-            <div class="project-card-title">Lily by Mosaic — Broadbeach, Gold Coast</div>
-            <div class="project-card-meta">📍 Broadbeach, QLD &nbsp;|&nbsp; Urmet Australia, 2025–Jun 2026</div>
-            <div class="project-card-desc">Combined service across CCTV/surveillance, access control, intercom and network infrastructure for a 98-residence luxury tower opposite Nikiforides Family Park, sister address to Marella with full ocean views.</div>
-            <a class="project-card-link" href="https://mosaicproperty.com.au/developments/lily/" target="_blank" rel="noopener">View Building →</a>
-          </div>
-          <div class="project-card">
-            <div class="project-card-title">The Witton — Indooroopilly, Brisbane</div>
-            <div class="project-card-meta">📍 Indooroopilly, QLD &nbsp;|&nbsp; Urmet Australia, 2025–Jun 2026</div>
-            <div class="project-card-desc">Combined service across CCTV/surveillance, access control, intercom and network infrastructure for a sold-out, 141-apartment boutique development across two buildings with city, river and hinterland views.</div>
-            <a class="project-card-link" href="https://mosaicproperty.com.au/developments/the-witton/" target="_blank" rel="noopener">View Building →</a>
-          </div>
-          <div class="project-card">
-            <div class="project-card-title">The Mowbray — East Brisbane</div>
-            <div class="project-card-meta">📍 East Brisbane, QLD &nbsp;|&nbsp; Urmet Australia, 2025–Jun 2026</div>
-            <div class="project-card-desc">Combined service across CCTV/surveillance, access control, intercom and network infrastructure for a $96M, sold-out 82-residence development opposite Mowbray Park and the Brisbane River.</div>
-            <a class="project-card-link" href="https://mosaicproperty.com.au/developments/the-mowbray/" target="_blank" rel="noopener">View Building →</a>
-          </div>
-          <div class="project-card">
-            <div class="project-card-title">Meriton Suites Southport — Gold Coast</div>
-            <div class="project-card-meta">📍 Southport, QLD &nbsp;|&nbsp; Urmet Australia, 2025–Jun 2026</div>
-            <div class="project-card-desc">Upgraded the CCTV/surveillance system to <a href="https://www.networkoptix.com/nx-witness" target="_blank" rel="noopener">Network Optix Nx Witness</a>, including the upgrade of over 280 cameras across the 55-storey Sundale Apartments tower — the tallest building in Southport, housing 208 hotel suites above level 25. Service also covers access control, intercom and network infrastructure.</div>
-            <a class="project-card-link" href="https://www.meritonsuites.com.au/our-hotels/qld/gold-coast/southport/" target="_blank" rel="noopener">View Building →</a>
-          </div>
-          <div class="project-card">
-            <div class="project-card-title">Drift Residences — Main Beach, Gold Coast</div>
-            <div class="project-card-meta">📍 Main Beach, QLD &nbsp;|&nbsp; Urmet Australia, 2025–Jun 2026</div>
-            <div class="project-card-desc">Combined service across CCTV/surveillance, access control, intercom and network infrastructure for a 31-level luxury tower comprising 50 premium beachside residences at 16–18 Hughes Avenue, developed by GDI Group.</div>
-            <a class="project-card-link" href="https://driftresidences.com.au/" target="_blank" rel="noopener">View Building →</a>
-          </div>
-          <div class="project-card">
-            <div class="project-card-title">WHITE Main Beach — Gold Coast</div>
-            <div class="project-card-meta">📍 Main Beach, QLD &nbsp;|&nbsp; Epsilon Security, 2016–2023</div>
-            <div class="project-card-desc">Combined service across CCTV/surveillance, access control, intercom and network infrastructure for a boutique 27-residence, full-floor luxury building between Tedder Avenue and Main Beach.</div>
-            <a class="project-card-link" href="https://www.kollosche.com.au/project/white-main-beach/" target="_blank" rel="noopener">View Building →</a>
-          </div>
-          <div class="project-card">
-            <div class="project-card-title">Lotus Tower — Kangaroo Point, Brisbane</div>
-            <div class="project-card-meta">📍 Kangaroo Point, QLD &nbsp;|&nbsp; Urmet Australia, 2025–Jun 2026</div>
-            <div class="project-card-desc">Service and system upgrades across CCTV/surveillance, access control, intercom and network infrastructure for a 20-level tower comprising 183 apartments, 5 penthouses and 12 townhomes.</div>
-            <a class="project-card-link" href="https://www.mcnab.net.au/expertise/residential/lotus-tower" target="_blank" rel="noopener">View Building →</a>
-          </div>
-        </div>
-      </div>
+    <div class="locked-teaser">
+      <div class="locked-icon">🔒</div>
+      <div class="locked-title">24 projects across Sydney, Canberra &amp; Queensland</div>
+      <p class="locked-desc">Large-scale residential &amp; mixed-use developments (8 per region) — CCTV/surveillance, access control, intercom and network infrastructure. Full project list with building names, scopes and links available on request.</p>
+      <a href="#" class="request-access-trigger locked-btn">🔓 Request Access</a>
     </div>
 
   </div>
@@ -1188,16 +1033,6 @@
     </div>
     <div class="contact-grid">
       <div class="contact-card">
-        <span class="contact-card-icon">📞</span>
-        <div class="contact-card-label">Phone</div>
-        <div class="contact-card-value"><a href="tel:0426917342">0426 917 342</a></div>
-      </div>
-      <div class="contact-card">
-        <span class="contact-card-icon">✉️</span>
-        <div class="contact-card-label">Email</div>
-        <div class="contact-card-value"><a href="mailto:dimokritos.k@gmail.com">dimokritos.k@gmail.com</a></div>
-      </div>
-      <div class="contact-card">
         <span class="contact-card-icon">📍</span>
         <div class="contact-card-label">Location</div>
         <div class="contact-card-value">Gold Coast, QLD<br>Australia</div>
@@ -1212,6 +1047,11 @@
         <div class="contact-card-label">LinkedIn</div>
         <div class="contact-card-value"><a href="https://www.linkedin.com/in/dimos-k-691979b5" target="_blank" rel="noopener">linkedin.com/in/dimos-k</a></div>
       </div>
+      <div class="contact-card">
+        <span class="contact-card-icon">🔒</span>
+        <div class="contact-card-label">Phone, Email &amp; CV</div>
+        <div class="contact-card-value"><a href="#" class="request-access-trigger">Request access</a></div>
+      </div>
     </div>
   </div>
 </section>
@@ -1220,6 +1060,20 @@
 <footer>
   © 2025 <span>Dimokritos Kallionakis</span> · Senior Security Service &amp; Surveillance Technician · Gold Coast, QLD
 </footer>
+
+<!-- ACCESS REQUEST MODAL -->
+<div class="access-overlay" id="access-overlay">
+  <div class="access-modal">
+    <h3>Request Access</h3>
+    <p>This unlocks full experience history, the complete project list, contact details and the CV. Please enter your email — I'll send you a private access link.</p>
+    <input type="email" id="access-email" placeholder="you@company.com" autocomplete="email" />
+    <div class="access-actions">
+      <button class="access-cancel" id="access-cancel" type="button">Cancel</button>
+      <button class="access-submit" id="access-submit" type="button">Send Link</button>
+    </div>
+    <div class="access-status" id="access-status"></div>
+  </div>
+</div>
 
 <script>
   // Scroll reveal
@@ -1239,14 +1093,71 @@
     observer.observe(el);
   });
 
-  // Region accordion toggle
-  function toggleRegion(id) {
-    document.getElementById(id).classList.toggle('open');
+  // Access request modal
+  const overlay = document.getElementById('access-overlay');
+  const emailInput = document.getElementById('access-email');
+  const submitBtn = document.getElementById('access-submit');
+  const cancelBtn = document.getElementById('access-cancel');
+  const statusEl = document.getElementById('access-status');
+
+  function openModal() {
+    overlay.classList.add('open');
+    statusEl.textContent = '';
+    statusEl.className = 'access-status';
+    emailInput.value = '';
+    emailInput.focus();
   }
-  // Open Sydney by default
-  document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('region-sydney').classList.add('open');
+  function closeModal() { overlay.classList.remove('open'); }
+
+  document.querySelectorAll('.request-access-trigger').forEach(el => {
+    el.addEventListener('click', (e) => { e.preventDefault(); openModal(); });
   });
+  cancelBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', (e) => { if (e.target === overlay) closeModal(); });
+
+  async function submitAccessRequest() {
+    const email = emailInput.value.trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      statusEl.textContent = 'Please enter a valid email address.';
+      statusEl.className = 'access-status err';
+      return;
+    }
+    submitBtn.disabled = true;
+    statusEl.textContent = 'Sending...';
+    statusEl.className = 'access-status';
+    try {
+      const res = await fetch('/.netlify/functions/request-access', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+      const data = await res.json();
+      if (res.ok && data.ok) {
+        statusEl.textContent = 'Check your inbox — the access link is on its way.';
+        statusEl.className = 'access-status ok';
+      } else {
+        statusEl.textContent = data.error || 'Something went wrong, please try again.';
+        statusEl.className = 'access-status err';
+      }
+    } catch {
+      statusEl.textContent = 'Network error, please try again.';
+      statusEl.className = 'access-status err';
+    } finally {
+      submitBtn.disabled = false;
+    }
+  }
+  submitBtn.addEventListener('click', submitAccessRequest);
+  emailInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') submitAccessRequest(); });
+
+  // Auto-open modal if redirected here needing access
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('access') === 'required' || params.get('access') === 'expired') {
+    openModal();
+    if (params.get('access') === 'expired') {
+      statusEl.textContent = 'Your previous link expired — request a new one.';
+      statusEl.className = 'access-status err';
+    }
+  }
 </script>
 </body>
 </html>
