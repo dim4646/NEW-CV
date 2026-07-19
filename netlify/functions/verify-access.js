@@ -17,7 +17,7 @@ exports.handler = async (event) => {
   return {
     statusCode: 302,
     headers: {
-      Location: '/protected/full-cv.html',
+      Location: '/protected/full-profile.html',
       'Set-Cookie': `access_token=${token}; Path=/; Max-Age=86400; HttpOnly; Secure; SameSite=Lax`,
     },
     body: '',
