@@ -21,14 +21,14 @@ Notes:
 
 ## Open items
 
-- [ ] **Subcontractor role bullets** — added as a first draft (2026 – Present, ProSecure Technology). Dimos to confirm
+- [ ] **Subcontractor role bullets** — added as a first draft (2026 – Present, Self-employed). Dimos to confirm
       start month and whether the bullets describe the work correctly (main clients / type of jobs).
 
 ## Changelog
 
 | Date | Change |
 |------|--------|
-| 2026-11-12 | New role: Security Systems Technician (Subcontractor), ProSecure Technology, 2026 – Present. WHITE Main Beach → Epsilon Security, 2016, travelled from Canberra to programme and complete the job (resolves the 2015 vs May 2016 conflict). |
+| 2026-11-12 | New role: Security Systems Technician (Subcontractor), Self-employed, 2026 – Present (company name intentionally not shown for now). WHITE Main Beach → Epsilon Security, 2016, travelled from Canberra to programme and complete the job (resolves the 2015 vs May 2016 conflict). |
 | 2026-11-12 | Single source of truth set up: `data/cv-data.json` + `scripts/` (make_cv, build_site, build_all), markers in both pages, public access blocked for source files. Output verified identical to the live site and PDF. |
 | 2026-11-12 | WHITE Main Beach → "Epsilon Security, 2015". |
 | 2026-11-12 | CV review fixes: Education added to PDF, ICT ProtegeWX dates (Dec 2025 – Dec 2027), Hanwha Cybersecurity date (Jun 2026), "2023–Jun 2026" instead of "present", "Cisco/Fortinet Trained" badges, Google cert year, Ubiquiti only under Networking, footer © 2026, consistent date dashes. |
