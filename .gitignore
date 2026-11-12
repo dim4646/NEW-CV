@@ -3,3 +3,6 @@
 
 # Local env vars (secrets)
 .env
+
+# Python cache
+__pycache__/

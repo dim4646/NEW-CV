@@ -1,0 +1,297 @@
+{
+  "_readme": "SINGLE SOURCE OF TRUTH for the CV PDF, index.html and protected/full-profile.html. Edit ONLY this file, then run: python3 scripts/build_all.py. Any text value may be a plain string (used everywhere) or {\"web\": ..., \"pdf\": ...} when the site and the PDF need different wording; use null to hide an item from one output. Links inside text: [text](url).",
+
+  "person": {
+    "name": "Dimokritos Kallionakis",
+    "first_name": "Dimokritos",
+    "last_name": "Kallionakis",
+    "title": "Senior Security Service & Surveillance Technician"
+  },
+
+  "contact": {
+    "phone": "0426 917 342",
+    "email": "dimokritos.k@gmail.com",
+    "location_lines": ["Gold Coast, QLD", "Australia"],
+    "location_short": "Gold Coast, QLD",
+    "linkedin_url": "https://www.linkedin.com/in/dimos-k-691979b5",
+    "linkedin_display": {"web": "linkedin.com/in/dimos-k", "pdf": "linkedin.com/in/dimos-k-691979b5"},
+    "website": "dimosk.netlify.app",
+    "availability": "Open to Senior & Lead Roles"
+  },
+
+  "hero": {
+    "tag": "Available for Senior Roles · Gold Coast, QLD",
+    "sub": "Senior Security Service & Surveillance Technician with 20+ years of hands-on experience in enterprise CCTV, electronic security systems and IP network infrastructure.",
+    "badges": ["CCTV & Surveillance", "Access Control", "IP Networks", "Fault Diagnosis", "Cisco Trained", "Fortinet Trained"]
+  },
+
+  "summary": {
+    "pdf": "Senior Security Service & Surveillance Technician with 20+ years of hands-on experience supporting live surveillance and electronic security systems in high-availability, regulated and continuously operating environments. Expert in enterprise CCTV, access control, intercom and IP network infrastructure, with a strong record of complex fault diagnosis, preventative maintenance and camera/image optimisation on live systems. Background includes ownership of a private electronics business in Greece (2003–2015), covering telecommunications, CCTV, network infrastructure and municipal broadband (MAN) deployments.",
+    "web": [
+      "Senior Security Service & Surveillance Technician with strong hands-on experience supporting live surveillance and electronic security systems in high-availability environments.",
+      "Experienced in enterprise CCTV systems, fault diagnosis, preventative maintenance and camera optimisation, with solid knowledge of IP-based video networks.",
+      "Proven ability to respond to incidents, support operational teams and maintain system reliability in regulated and continuously operating sites.",
+      "Background includes ownership of a private electronics business in Greece (2003–2015), providing a broad foundation across telecommunications, CCTV, network infrastructure and customer support."
+    ]
+  },
+
+  "languages": [
+    {"name": "Greek", "level": "Native", "bar": 100},
+    {"name": "English", "level": "Professional", "bar": 80}
+  ],
+
+  "stats": {
+    "years": 20,
+    "platforms": 5,
+    "regions": 3
+  },
+
+  "skills": [
+    {"icon": "📷", "title": "CCTV & Surveillance",
+     "tags": ["Dahua", "AXIS", "Hikvision", "Vivotek", "Wisenet", "Nx Witness"]},
+    {"icon": "🔐", "title": "Access Control & Intercom",
+     "tags": ["ICT Protege WX", "Inner Range", "FDi Systems", "Urmet IP", "Dnake IP Video Intercom"]},
+    {"icon": "🔔", "title": "Alarm Systems",
+     "tags": ["Bosch", "Ajax Systems", "Fault Diagnosis", "Preventative Maintenance", "System Commissioning"]},
+    {"icon": "🌐", "title": "Networking",
+     "tags": ["Cisco", "Fortinet", "TP-Link", "MikroTik", "Ubiquiti", "SD-WAN",
+              {"web": "VPN / Firewall Configuration", "pdf": "VPN/Firewalls"},
+              {"web": "VLANs & Network Segmentation", "pdf": "VLANs & Segmentation"},
+              "Wireless Site Surveys"]},
+    {"icon": "🛠️", "title": {"web": "Field & Service Skills", "pdf": "Field & Service"},
+     "tags": ["Senior-Level Troubleshooting",
+              {"web": "Camera Optimisation", "pdf": "Camera & Image Optimisation"},
+              {"web": "Image Optimisation", "pdf": null},
+              "WHS Compliance", "Technical Reporting"]},
+    {"icon": "🏢", "title": "Enterprise Environments",
+     "tags": ["Live System Maintenance", "High-Availability Sites", "Regulated Environments",
+              {"web": "Team Support", "pdf": null}, "Documentation"]},
+    {"icon": "🤖", "title": "AI & Automation",
+     "tags": ["ChatGPT", "Claude / Claude Code", "Python",
+              {"web": "n8n Automation", "pdf": "n8n"},
+              {"web": "Web Development", "pdf": null},
+              "GitHub", "Prompt Engineering",
+              {"web": null, "pdf": "Web Development"}]}
+  ],
+
+  "experience": [
+    {
+      "role": "Senior Security Service Technician",
+      "dates": "2023 – Jun 2026",
+      "company": "Urmet Australia (formerly Epsilon Security / SUPATECH)",
+      "location": "Loganholme, QLD, Australia",
+      "current": true,
+      "teaser": {"title": "Senior Security Service Technician", "dates": "2023–Jun 2026", "place": "Gold Coast"},
+      "bullets": {
+        "web": [
+          "Service, fault diagnosis and resolution of surveillance and electronic security systems across 10–30 commercial and residential sites, managing 50–100+ devices per site on average.",
+          "Troubleshooting and maintenance of enterprise CCTV / surveillance, access control, intercom and IP network infrastructure.",
+          "Preventative maintenance including camera inspections, equipment replacement, system adjustments and image optimisation.",
+          "Diagnosing complex faults on live systems while maintaining continuous operation and system availability.",
+          "Providing technical support to service, network and project teams.",
+          "Preparing technical reports and documentation for management and compliance purposes."
+        ],
+        "pdf": [
+          "Service, fault diagnosis and resolution of surveillance and electronic security systems across 10–30 commercial and residential sites, managing 50–100+ devices per site on average.",
+          "Troubleshooting and maintenance of enterprise CCTV/surveillance, access control, intercom and IP network infrastructure.",
+          "Preventative maintenance including camera inspections, equipment replacement, system adjustments and image optimisation.",
+          "Diagnosing complex faults on live systems while maintaining continuous operation and system availability.",
+          "Upgraded Meriton Suites Southport to Network Optix Nx Witness, including 280+ cameras across the 55-storey Sundale tower.",
+          "Providing technical support to service, network and project teams; preparing technical reports and compliance documentation."
+        ]
+      }
+    },
+    {
+      "role": "Security Service Technician",
+      "dates": "May 2016 – May 2023",
+      "company": "Urmet Australia (Epsilon Security)",
+      "location": "Mascot, NSW, Australia",
+      "current": false,
+      "teaser": {"title": "Security Service Technician", "dates": "2016–2023", "place": "Sydney"},
+      "bullets": {
+        "web": [
+          "Service and maintenance of CCTV / surveillance, access control, alarm and intercom systems.",
+          "Troubleshooting IP cameras, VMS platforms and network-related issues.",
+          "Programming and support of Urmet intercom and IP-based systems.",
+          "Supporting operational teams and service activities across multiple large sites.",
+          "Subcontractor on projects for Amazon, Fredon and Next Security.",
+          "Installation, testing and commissioning of surveillance and terminal devices."
+        ],
+        "pdf": [
+          "Service and maintenance of CCTV/surveillance, access control, alarm and intercom systems across major residential precincts in Sydney and Canberra (Opal Tower, Granville Place, Burwood Grand, WOVA and more).",
+          "Troubleshooting IP cameras, VMS platforms and network-related issues; programming and support of Urmet intercom and IP-based systems.",
+          "Subcontractor on projects for Amazon, Fredon and Next Security.",
+          "Installation, testing and commissioning of surveillance and terminal devices."
+        ]
+      }
+    },
+    {
+      "role": "Owner / Electronic Systems Technician",
+      "dates": "2003 – 2015",
+      "company": "Antenna Stores – Private Business",
+      "location": "Heraklion, Crete, Greece",
+      "current": false,
+      "teaser": {"title": "Owner/Technician", "dates": "2003–2015", "place": "Greece"},
+      "bullets": {
+        "web": [
+          "Inspection, evaluation and installation of telecommunications, antenna and alarm systems.",
+          "Installation and maintenance of CCTV systems in residential, commercial and industrial environments.",
+          "Design, implementation and maintenance of network infrastructure.",
+          "End-to-end technical support and customer management.",
+          "Development and deployment of broadband infrastructure at municipal level, with specialisation in Metropolitan Area Networks (MAN).",
+          "Configuration and installation of high-speed Point-to-Point (P2P) links via wireless networks and fibre optics, for interconnecting municipal buildings and public infrastructure.",
+          "Technical support, signal optimisation and maintenance of urban network connections."
+        ],
+        "pdf": [
+          "Installation and maintenance of CCTV, telecommunications, antenna and alarm systems in residential, commercial and industrial environments.",
+          "Design, implementation and maintenance of network infrastructure; end-to-end technical support and customer management.",
+          "Development of municipal broadband infrastructure with specialisation in Metropolitan Area Networks (MAN), including high-speed wireless and fibre-optic Point-to-Point links interconnecting public buildings."
+        ]
+      }
+    }
+  ],
+
+  "education": [
+    {
+      "title": "Technical Vocational Diploma (Level 3) – Electronics: Audiovisual Systems",
+      "school": "1st Technical Vocational School of Moires",
+      "location": {"web": "Heraklion, Crete, Greece", "pdf": "Heraklion, Crete"},
+      "year": "2001"
+    }
+  ],
+
+  "licences": [
+    {"name": "QLD Security Provider Licence", "class": "Class 2", "number": "4803064", "expires": "11/2027"}
+  ],
+
+  "certifications": [
+    {
+      "id": "security",
+      "title": "Security & Surveillance",
+      "badge": "sec",
+      "items": [
+        {"icon": "🛡️", "name": "ICT ProtegeWX – Certified Integrator (Level 2)", "awarded": "Dec 2025", "valid_until": "Dec 2027"},
+        {"icon": "🛡️", "name": "Inner Range Integriti"},
+        {"icon": "📷", "name": "AXIS – Optimiser for Milestone XProtect"},
+        {"icon": "🔔", "name": "Ajax Systems Wireless – Training Completed (Certification in progress)", "in_progress": true}
+      ]
+    },
+    {
+      "id": "networking",
+      "title": "Networking & Cyber Security",
+      "badge": "net",
+      "items": [
+        {"icon": "🔒", "name": "Google – Foundations of Cybersecurity (Coursera, 2026)"},
+        {"icon": "🔒", "name": "Fortinet – Getting Started in Cybersecurity 2.0"},
+        {"icon": "🌐", "name": "Cisco – Introduction to Cybersecurity"},
+        {"icon": "🌐", "name": "Cisco – Networking Basics"},
+        {"icon": "🌐", "name": "Cisco – Networking Devices & Initial Configuration"}
+      ]
+    },
+    {
+      "id": "hanwha",
+      "title": "Hanwha Vision",
+      "badge": "han",
+      "items": [
+        {"icon": "📷", "name": "Network Camera Advanced"},
+        {"icon": "🎬", "name": "Wisenet WAVE VMS Advanced"},
+        {"icon": "🖥️", "name": "Wisenet SSM Advanced"},
+        {"icon": "🔧", "name": "Wisenet Toolbox PLUS"},
+        {"icon": "📟", "name": "Decoder"},
+        {"icon": "🔒", "name": "Cybersecurity Certification", "provider": "Hanwha Vision Learning Center", "date": "Jun 2026"}
+      ]
+    }
+  ],
+
+  "projects_teaser": "Large-scale residential & mixed-use developments ({per_region}) — CCTV/surveillance, access control, intercom and network infrastructure. Full project list with building names, scopes and links available on request.",
+
+  "project_regions": [
+    {
+      "id": "region-sydney", "name": "Sydney, NSW", "short": "Sydney",
+      "projects": [
+        {"title": "Opal Tower — Sydney Olympic Park", "location": "Sydney, NSW", "company": "Epsilon Security", "years": "2016–2023",
+         "desc": "Combined service across CCTV/surveillance, access control, intercom and network infrastructure for one of Sydney Olympic Park's landmark high-rise residential towers — a high-availability, high-occupancy site requiring continuous system uptime.",
+         "link": "https://icon.co/projects/opal-tower/"},
+        {"title": "Granville Place — Granville, NSW", "location": "Granville, NSW", "company": "Epsilon Security", "years": "2016–2023",
+         "desc": "Combined service across CCTV/surveillance, access control, intercom and network infrastructure for a major 618-apartment, three-tower residential and retail development — coordinating system reliability across multiple buildings on a single large-scale site.",
+         "link": "https://www.parkview.com.au/projects/granville-place"},
+        {"title": "Burwood Grand — Burwood, NSW", "location": "Burwood, NSW", "company": "Epsilon Security", "years": "2016–2023",
+         "desc": "Combined service across CCTV/surveillance, access control, intercom and network infrastructure for a $500M landmark mixed-use development of three residential towers, retail tenancies and council chambers — supporting over 1,000 residents on a continuously operating site.",
+         "link": "https://decodegroup.com.au/projects/commercial/burwood-grand/"},
+        {"title": "Schofield Gardens — Schofields, NSW", "location": "Schofields, NSW", "company": "Epsilon Security", "years": "2016–2023",
+         "desc": "Combined service across CCTV/surveillance, access control, intercom and network infrastructure for ALAND's award-winning masterplanned residential community — a multi-stage, multi-building development supporting thousands of residents across the precinct.",
+         "link": "https://aland.com.au/projects/schofield-gardens/"},
+        {"title": "Wicks Place — Marrickville, NSW", "location": "Marrickville, NSW", "company": "Epsilon Security", "years": "2016–2023",
+         "desc": "Combined service across CCTV/surveillance, access control, intercom and network infrastructure for a 270-apartment urban village across five boutique buildings, anchored by a retail precinct overlooking Wicks Park.",
+         "link": "https://www.toga.com.au/project/wicks-place/"},
+        {"title": "Macquarie Rise — Macquarie Park, NSW", "location": "Macquarie Park, NSW", "company": "Epsilon Security", "years": "2016–2023",
+         "desc": "Combined service across CCTV/surveillance, access control, intercom and network infrastructure for a $400M, 268-apartment mixed-use precinct across three residential towers with retail and commercial podium.",
+         "link": "https://www.toga.com.au/project/macquarie-rise/"},
+        {"title": "Highpoint — Hurstville, NSW", "location": "Hurstville, NSW", "company": "Epsilon Security", "years": "2016–2023",
+         "desc": "Combined service across CCTV/surveillance, access control, intercom and network infrastructure for a $270M, three-tower 448-apartment masterplanned community housing 800+ residents at Hurstville's highest point.",
+         "link": "https://www.toga.com.au/project/highpoint-hurstville/"},
+        {"title": "Marina Square — Wentworth Point, NSW", "location": "Wentworth Point, NSW", "company": "Epsilon Security", "years": "2016–2023",
+         "desc": "Combined service across CCTV/surveillance, access control, intercom and network infrastructure for an award-winning, 765-apartment mixed-use precinct across 7 buildings above a waterfront town centre.",
+         "link": "https://marinasquare.com.au/"}
+      ]
+    },
+    {
+      "id": "region-canberra", "name": "Canberra, ACT", "short": "Canberra",
+      "projects": [
+        {"title": "The Establishment — Gungahlin, ACT", "location": "Gungahlin, ACT", "company": "Epsilon Security", "years": "2016–2023",
+         "desc": "Combined service across CCTV/surveillance, access control, intercom and network infrastructure for a 14-storey, 270-apartment residential tower with retail and dining precinct, in one of Canberra's fastest-growing town centres.",
+         "link": "https://geocon.com.au/development/the-establishment"},
+        {"title": "WOVA — Phillip, ACT", "location": "Phillip, ACT", "company": "Epsilon Security", "years": "2016–2023",
+         "desc": "Combined service across CCTV/surveillance, access control, intercom and network infrastructure for a four-tower, 800+ apartment mixed-use precinct in the heart of the old Woden Town Centre regeneration.",
+         "link": "https://geocon.com.au/development/wova"},
+        {"title": "Aspen Village — Greenway, ACT", "location": "Greenway, ACT", "company": "Epsilon Security", "years": "2016–2023",
+         "desc": "Combined service across CCTV/surveillance, access control, intercom and network infrastructure for Tuggeranong's first true mixed-use precinct — 570+ apartments and over 30 commercial tenancies serving 3,000+ residents.",
+         "link": "https://geocon.com.au/development/aspen"},
+        {"title": "Metropol — Canberra City, ACT", "location": "Canberra City, ACT", "company": "Epsilon Security", "years": "2016–2023",
+         "desc": "Combined service across CCTV/surveillance, access control, intercom and network infrastructure for a premium three-building residential complex in Canberra's CBD, including a shared resident's penthouse and rooftop terraces.",
+         "link": "https://geocon.com.au/development/metropol"},
+        {"title": "The Sullivan — Lyneham, ACT", "location": "Lyneham, ACT", "company": "Epsilon Security", "years": "2016–2023",
+         "desc": "Combined service across CCTV/surveillance, access control, intercom and network infrastructure for a 176-apartment, nine-storey residential building along Northbourne Avenue, part of the Northbourne Village precinct.",
+         "link": "https://www.jwlandconstruction.com.au/projects/the-sullivan-at-northbourne-village"},
+        {"title": "W2 — Woden, ACT", "location": "Phillip, ACT", "company": "Epsilon Security", "years": "2016–2023",
+         "desc": "Combined service across CCTV/surveillance, access control, intercom and network infrastructure for a 24-storey, 222-apartment residential tower in the heart of Woden Town Centre.",
+         "link": "https://ftigroup.com.au/projects/australian-capital-territory/w2-woden/"},
+        {"title": "Molonglo Falls — Coombs, ACT", "location": "Coombs, ACT", "company": "Epsilon Security", "years": "2016–2023",
+         "desc": "Combined service across CCTV/surveillance, access control, intercom and network infrastructure for a 129-residence development in the Molonglo Valley, 10km from Canberra CBD — featuring a striking architectural design with central atrium and waterfall feature.",
+         "link": "https://zapari.com.au/projects/molonglo-falls/"},
+        {"title": "Limited Edition — Denman Prospect, ACT", "location": "Denman Prospect, ACT", "company": "Epsilon Security", "years": "2016–2023",
+         "desc": "Combined service across CCTV/surveillance, access control, intercom and network infrastructure for a boutique residential development comprising 1, 2 & 3 bedroom apartments and 3 & 4 bedroom townhouses, elevated with views over the Molonglo River corridor and Denman parkland.",
+         "link": "https://coredev.com.au/projects/limited-edition/"}
+      ]
+    },
+    {
+      "id": "region-queensland", "name": "Queensland, QLD", "short": "Queensland",
+      "projects": [
+        {"title": "Marella by Mosaic — Broadbeach, Gold Coast", "location": "Broadbeach, QLD", "company": "Urmet Australia", "years": "2025–Jun 2026",
+         "desc": "Combined service across CCTV/surveillance, access control, intercom and network infrastructure for a 30-storey luxury residential tower with hotel-style amenities, overlooking the Gold Coast's Broadbeach coastline.",
+         "link": "https://mosaicproperty.com.au/developments/marella/"},
+        {"title": "Lily by Mosaic — Broadbeach, Gold Coast", "location": "Broadbeach, QLD", "company": "Urmet Australia", "years": "2025–Jun 2026",
+         "desc": "Combined service across CCTV/surveillance, access control, intercom and network infrastructure for a 98-residence luxury tower opposite Nikiforides Family Park, sister address to Marella with full ocean views.",
+         "link": "https://mosaicproperty.com.au/developments/lily/"},
+        {"title": "The Witton — Indooroopilly, Brisbane", "location": "Indooroopilly, QLD", "company": "Urmet Australia", "years": "2025–Jun 2026",
+         "desc": "Combined service across CCTV/surveillance, access control, intercom and network infrastructure for a sold-out, 141-apartment boutique development across two buildings with city, river and hinterland views.",
+         "link": "https://mosaicproperty.com.au/developments/the-witton/"},
+        {"title": "The Mowbray — East Brisbane", "location": "East Brisbane, QLD", "company": "Urmet Australia", "years": "2025–Jun 2026",
+         "desc": "Combined service across CCTV/surveillance, access control, intercom and network infrastructure for a $96M, sold-out 82-residence development opposite Mowbray Park and the Brisbane River.",
+         "link": "https://mosaicproperty.com.au/developments/the-mowbray/"},
+        {"title": "Meriton Suites Southport — Gold Coast", "location": "Southport, QLD", "company": "Urmet Australia", "years": "2025–Jun 2026",
+         "desc": "Upgraded the CCTV/surveillance system to [Network Optix Nx Witness](https://www.networkoptix.com/nx-witness), including the upgrade of over 280 cameras across the 55-storey Sundale Apartments tower — the tallest building in Southport, housing 208 hotel suites above level 25. Service also covers access control, intercom and network infrastructure.",
+         "link": "https://www.meritonsuites.com.au/our-hotels/qld/gold-coast/southport/"},
+        {"title": "Drift Residences — Main Beach, Gold Coast", "location": "Main Beach, QLD", "company": "Urmet Australia", "years": "2025–Jun 2026",
+         "desc": "Combined service across CCTV/surveillance, access control, intercom and network infrastructure for a 31-level luxury tower comprising 50 premium beachside residences at 16–18 Hughes Avenue, developed by GDI Group.",
+         "link": "https://driftresidences.com.au/"},
+        {"title": "WHITE Main Beach — Gold Coast", "location": "Main Beach, QLD", "company": "Epsilon Security", "years": "2015",
+         "desc": "Combined service across CCTV/surveillance, access control, intercom and network infrastructure for a boutique 27-residence, full-floor luxury building between Tedder Avenue and Main Beach.",
+         "link": "https://www.kollosche.com.au/project/white-main-beach/"},
+        {"title": "Lotus Tower — Kangaroo Point, Brisbane", "location": "Kangaroo Point, QLD", "company": "Urmet Australia", "years": "2025–Jun 2026",
+         "desc": "Service and system upgrades across CCTV/surveillance, access control, intercom and network infrastructure for a 20-level tower comprising 183 apartments, 5 penthouses and 12 townhomes.",
+         "link": "https://www.mcnab.net.au/expertise/residential/lotus-tower"}
+      ]
+    }
+  ]
+}

@@ -4,3 +4,28 @@
 
 [build.environment]
   NODE_VERSION = "18"
+
+# Source/build files must never be served publicly (cv-data.json holds phone, email, full licence number)
+[[redirects]]
+  from = "/data/*"
+  to = "/404"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/scripts/*"
+  to = "/404"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/PENDING.md"
+  to = "/404"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/CLAUDE.md"
+  to = "/404"
+  status = 404
+  force = true
