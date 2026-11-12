@@ -24,10 +24,14 @@ Notes:
 - [ ] **EWPA Yellow Card** — trained Feb 2021, card lost/stolen; renewal/replacement email sent to EWPA on 2026-11-12 (from Dimos's older email address) — waiting for reply.
       Dimos chose to keep it on the CV without a "renewal" note.
 
+- [ ] **Telegram notifications** — code is ready; add `TELEGRAM_BOT_TOKEN` (secret) and `TELEGRAM_CHAT_ID` in
+      Netlify → dimosk → Environment variables, then redeploy. Until then requests arrive by email only.
+
 ## Changelog
 
 | Date | Change |
 |------|--------|
+| 2026-11-12 | Access requests now need Dimos's approval: visitor request → Telegram/email to Dimos with Approve/Reject (confirmation page, 7-day expiry) → on approve the visitor gets the 24-hour link. OWNER_EMAIL set in Netlify. |
 | 2026-11-12 | Updated CV sent to AustCorp; EWPA renewal request sent. |
 | 2026-11-12 | Skills: "AI & Automation" → "Automation & Scripting" (Python, Automation Scripting, Network Monitoring, GitHub). PDF: three Cisco courses merged into one line (site keeps them separate). |
 | 2026-11-12 | Added EWPA Yellow Card (VL, SL, BL) to Licences. No other cards held (no ACMA, Heights, First Aid). |

@@ -1114,11 +1114,11 @@
 <div class="access-overlay" id="access-overlay">
   <div class="access-modal">
     <h3>Request Access</h3>
-    <p>This unlocks full experience history, the complete project list, contact details and the CV. Please enter your email — I'll send you a private access link.</p>
+    <p>This unlocks full experience history, the complete project list, contact details and the CV. Please enter your email — once I approve your request, you'll receive a private access link.</p>
     <input type="email" id="access-email" placeholder="you@company.com" autocomplete="email" />
     <div class="access-actions">
       <button class="access-cancel" id="access-cancel" type="button">Cancel</button>
-      <button class="access-submit" id="access-submit" type="button">Send Link</button>
+      <button class="access-submit" id="access-submit" type="button">Send Request</button>
     </div>
     <div class="access-status" id="access-status"></div>
   </div>
@@ -1172,7 +1172,7 @@
       return;
     }
     submitBtn.disabled = true;
-    statusEl.textContent = 'Sending...';
+    statusEl.textContent = 'Sending request...';
     statusEl.className = 'access-status';
     try {
       const res = await fetch('/.netlify/functions/request-access', {
@@ -1182,7 +1182,7 @@
       });
       const data = await res.json();
       if (res.ok && data.ok) {
-        statusEl.textContent = 'Check your inbox — the access link is on its way.';
+        statusEl.textContent = 'Thank you — your request has been sent. You will receive an access link by email once it is approved.';
         statusEl.className = 'access-status ok';
       } else {
         statusEl.textContent = data.error || 'Something went wrong, please try again.';
