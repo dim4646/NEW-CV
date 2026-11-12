@@ -21,13 +21,15 @@ Notes:
 
 ## Open items
 
-- [ ] **Subcontractor role bullets** — added as a first draft (2026 – Present, Self-employed). Dimos to confirm
-      start month and whether the bullets describe the work correctly (main clients / type of jobs).
+- [ ] **Skills / courses clean-up** (discussed, not yet agreed): keep only Python/Automation from "AI & Automation";
+      merge intro cyber courses into one line.
+- [ ] **Other Australian cards** — ask Dimos if he holds ACMA Cabling Registration, Working at Heights / EWP, First Aid.
 
 ## Changelog
 
 | Date | Change |
 |------|--------|
+| 2026-11-12 | Subcontractor role rewritten after discussion: works directly with clients, Gold Coast + Brisbane, offering installation, service and maintenance; on-site fault rectification. |
 | 2026-11-12 | Added White Card (General Construction Induction) and Current Driver Licence to Licences (PDF + homepage card). |
 | 2026-11-12 | New role: Security Systems Technician (Subcontractor), Self-employed, 2026 – Present (company name intentionally not shown for now). WHITE Main Beach → Epsilon Security, 2016, travelled from Canberra to programme and complete the job (resolves the 2015 vs May 2016 conflict). |
 | 2026-11-12 | Single source of truth set up: `data/cv-data.json` + `scripts/` (make_cv, build_site, build_all), markers in both pages, public access blocked for source files. Output verified identical to the live site and PDF. |
