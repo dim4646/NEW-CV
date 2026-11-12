@@ -138,10 +138,13 @@ def r_certs(d):
     for g in d["certifications"]:
         out += ['  <div>', f'    <div class="cert-group-title">{esc(g["title"])}</div>']
         for c in g["items"]:
+            name = pick(c["name"], T)
+            if name is None:
+                continue
             meta = cvdata.cert_web_meta(c)
             meta_html = f'<span class="cert-meta">{esc(meta)}</span>' if meta else ""
             out += ['    <div class="cert-item">', f'      <div class="cert-badge {g["badge"]}">{c["icon"]}</div>',
-                    f'      <div class="cert-name">{esc(c["name"])}{meta_html}</div>', '    </div>']
+                    f'      <div class="cert-name">{esc(name)}{meta_html}</div>', '    </div>']
         out += ['  </div>']
     out += ['</div>']
     return ind(4, out)

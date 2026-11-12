@@ -124,10 +124,10 @@ def build(data, out):
     right = []
     for gid, col in (("security", left), ("hanwha", right), ("networking", right)):
         g = certs[gid]
-        col += block(g["title"], [cvdata.cert_pdf_name(i) for i in g["items"]])
+        col += block(g["title"], [n for n in map(cvdata.cert_pdf_name, g["items"]) if n])
     for g in data["certifications"]:  # any new group added later goes to the right column
         if g["id"] not in ("security", "hanwha", "networking"):
-            right += block(g["title"], [cvdata.cert_pdf_name(i) for i in g["items"]])
+            right += block(g["title"], [n for n in map(cvdata.cert_pdf_name, g["items"]) if n])
     right += block("Languages", [f"{l['name']} — {l['level']}" for l in data["languages"]])
     t = Table([[left, right]], colWidths=[CW * 0.5, CW * 0.5])
     t.setStyle(TableStyle([("VALIGN", (0, 0), (-1, -1), "TOP"), ("LEFTPADDING", (0, 0), (-1, -1), 0),

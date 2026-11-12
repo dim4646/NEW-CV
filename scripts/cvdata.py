@@ -38,7 +38,8 @@ def strip_links(text):
 
 def cert_count(data):
     """Completed certifications (training still in progress is not counted)."""
-    return sum(1 for g in data["certifications"] for c in g["items"] if not c.get("in_progress"))
+    return sum(1 for g in data["certifications"] for c in g["items"]
+               if not c.get("in_progress") and pick(c["name"], "web") is not None)
 
 
 def project_count(data):
@@ -63,6 +64,10 @@ def cert_web_meta(c):
 
 
 def cert_pdf_name(c):
+    """PDF line for a certification, or None if hidden from the PDF."""
+    name = pick(c["name"], "pdf")
+    if name is None:
+        return None
     parts = []
     if c.get("awarded"):
         parts.append(c["awarded"])
@@ -70,7 +75,7 @@ def cert_pdf_name(c):
         parts.append(c["date"])
     if c.get("valid_until"):
         parts.append("valid until " + c["valid_until"])
-    return c["name"] + (f" ({', '.join(parts)})" if parts else "")
+    return name + (f" ({', '.join(parts)})" if parts else "")
 
 
 def licence_pdf(l):

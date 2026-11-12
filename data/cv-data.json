@@ -152,25 +152,12 @@
     },
     {
       "icon": "🤖",
-      "title": "AI & Automation",
+      "title": "Automation & Scripting",
       "tags": [
-        "ChatGPT",
-        "Claude / Claude Code",
         "Python",
-        {
-          "web": "n8n Automation",
-          "pdf": "n8n"
-        },
-        {
-          "web": "Web Development",
-          "pdf": null
-        },
-        "GitHub",
-        "Prompt Engineering",
-        {
-          "web": null,
-          "pdf": "Web Development"
-        }
+        "Automation Scripting",
+        "Network Monitoring",
+        "GitHub"
       ]
     }
   ],
@@ -354,15 +341,31 @@
         },
         {
           "icon": "🌐",
-          "name": "Cisco – Introduction to Cybersecurity"
+          "name": {
+            "web": "Cisco – Introduction to Cybersecurity",
+            "pdf": null
+          }
         },
         {
           "icon": "🌐",
-          "name": "Cisco – Networking Basics"
+          "name": {
+            "web": "Cisco – Networking Basics",
+            "pdf": null
+          }
         },
         {
           "icon": "🌐",
-          "name": "Cisco – Networking Devices & Initial Configuration"
+          "name": {
+            "web": "Cisco – Networking Devices & Initial Configuration",
+            "pdf": null
+          }
+        },
+        {
+          "icon": "🌐",
+          "name": {
+            "web": null,
+            "pdf": "Cisco Networking Academy – Introduction to Cybersecurity · Networking Basics · Networking Devices & Initial Configuration"
+          }
         }
       ]
     },

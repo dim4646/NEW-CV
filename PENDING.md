@@ -21,14 +21,14 @@ Notes:
 
 ## Open items
 
-- [ ] **Skills / courses clean-up** (discussed, not yet agreed): keep only Python/Automation from "AI & Automation";
-      merge intro cyber courses into one line.
-- [ ] **EWPA Yellow Card currency** — trained Feb 2021. Check on the EWPA verify page whether it needs renewal.
+- [ ] **EWPA Yellow Card** — trained Feb 2021, card lost/stolen; renewal/replacement email to EWPA drafted 2026-11-12.
+      Dimos chose to keep it on the CV without a "renewal" note.
 
 ## Changelog
 
 | Date | Change |
 |------|--------|
+| 2026-11-12 | Skills: "AI & Automation" → "Automation & Scripting" (Python, Automation Scripting, Network Monitoring, GitHub). PDF: three Cisco courses merged into one line (site keeps them separate). |
 | 2026-11-12 | Added EWPA Yellow Card (VL, SL, BL) to Licences. No other cards held (no ACMA, Heights, First Aid). |
 | 2026-11-12 | Subcontractor role rewritten after discussion: works directly with clients, Gold Coast + Brisbane, offering installation, service and maintenance; on-site fault rectification. |
 | 2026-11-12 | Added White Card (General Construction Induction) and Current Driver Licence to Licences (PDF + homepage card). |
