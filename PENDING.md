@@ -21,13 +21,14 @@ Notes:
 
 ## Open items
 
-- [ ] **EWPA Yellow Card** — trained Feb 2021, card lost/stolen; renewal/replacement email to EWPA drafted 2026-11-12.
+- [ ] **EWPA Yellow Card** — trained Feb 2021, card lost/stolen; renewal/replacement email sent to EWPA on 2026-11-12 (from Dimos's older email address) — waiting for reply.
       Dimos chose to keep it on the CV without a "renewal" note.
 
 ## Changelog
 
 | Date | Change |
 |------|--------|
+| 2026-11-12 | Updated CV sent to AustCorp; EWPA renewal request sent. |
 | 2026-11-12 | Skills: "AI & Automation" → "Automation & Scripting" (Python, Automation Scripting, Network Monitoring, GitHub). PDF: three Cisco courses merged into one line (site keeps them separate). |
 | 2026-11-12 | Added EWPA Yellow Card (VL, SL, BL) to Licences. No other cards held (no ACMA, Heights, First Aid). |
 | 2026-11-12 | Subcontractor role rewritten after discussion: works directly with clients, Gold Coast + Brisbane, offering installation, service and maintenance; on-site fault rectification. |
