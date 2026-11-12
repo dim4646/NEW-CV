@@ -23,12 +23,13 @@ Notes:
 
 - [ ] **Skills / courses clean-up** (discussed, not yet agreed): keep only Python/Automation from "AI & Automation";
       merge intro cyber courses into one line.
-- [ ] **Other Australian cards** — ask Dimos if he holds ACMA Cabling Registration, Working at Heights / EWP, First Aid.
+- [ ] **EWPA Yellow Card currency** — trained Feb 2021. Check on the EWPA verify page whether it needs renewal.
 
 ## Changelog
 
 | Date | Change |
 |------|--------|
+| 2026-11-12 | Added EWPA Yellow Card (VL, SL, BL) to Licences. No other cards held (no ACMA, Heights, First Aid). |
 | 2026-11-12 | Subcontractor role rewritten after discussion: works directly with clients, Gold Coast + Brisbane, offering installation, service and maintenance; on-site fault rectification. |
 | 2026-11-12 | Added White Card (General Construction Induction) and Current Driver Licence to Licences (PDF + homepage card). |
 | 2026-11-12 | New role: Security Systems Technician (Subcontractor), Self-employed, 2026 – Present (company name intentionally not shown for now). WHITE Main Beach → Epsilon Security, 2016, travelled from Canberra to programme and complete the job (resolves the 2015 vs May 2016 conflict). |
