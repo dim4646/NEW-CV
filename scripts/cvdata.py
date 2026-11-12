@@ -71,3 +71,22 @@ def cert_pdf_name(c):
     if c.get("valid_until"):
         parts.append("valid until " + c["valid_until"])
     return c["name"] + (f" ({', '.join(parts)})" if parts else "")
+
+
+def licence_pdf(l):
+    """'Name – Class 2 (No. 123, expires 11/2027)'; optional fields are skipped."""
+    text = l["name"] + (f" – {l['class']}" if l.get("class") else "")
+    extra = [f"No. {l['number']}"] if l.get("number") else []
+    if l.get("expires"):
+        extra.append(f"expires {l['expires']}")
+    return text + (f" ({', '.join(extra)})" if extra else "")
+
+
+def licence_web(l):
+    """Public page: masked number, short form."""
+    parts = [l["class"]] if l.get("class") else []
+    if l.get("number"):
+        parts.append("No. " + masked_licence(l["number"]))
+    if l.get("expires"):
+        parts.append("Exp. " + l["expires"])
+    return " · ".join(parts)

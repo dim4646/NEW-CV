@@ -120,8 +120,7 @@ def build(data, out):
     certs = {g["id"]: g for g in data["certifications"]}
     left = block("Education", [f"{ed['title']} – {ed['school']}, {cvdata.pick(ed['location'], T)} ({ed['year']})"
                                for ed in data["education"]])
-    left += block("Licences", [f"{l['name']} – {l['class']} (No. {l['number']}, expires {l['expires']})"
-                               for l in data["licences"]])
+    left += block("Licences", [cvdata.licence_pdf(l) for l in data["licences"]])
     right = []
     for gid, col in (("security", left), ("hanwha", right), ("networking", right)):
         g = certs[gid]

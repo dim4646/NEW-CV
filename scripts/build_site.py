@@ -51,7 +51,7 @@ def r_hero(d):
 
 
 def r_hero_contact(d):
-    c, lic = d["contact"], d["licences"][0]
+    c = d["contact"]
     langs = " &amp; ".join(esc(l["name"]) for l in sorted(d["languages"], key=lambda l: l["name"] != "English"))
     out = [
         '<div class="contact-row">', '  <div class="contact-icon">📍</div>', f'  <div>{"<br>".join(esc(x) for x in c["location_lines"])}</div>', '</div>',
@@ -59,12 +59,15 @@ def r_hero_contact(d):
         '<div class="contact-row">', '  <div class="contact-icon">🌐</div>', f'  <div>{langs}</div>', '</div>',
         '<div class="contact-row">', '  <div class="contact-icon">🔒</div>', '  <div><a href="#" class="request-access-trigger">Phone &amp; email — request access</a></div>', '</div>',
         '<div style="border-top:1px solid rgba(201,168,76,.25);margin:1rem 0 .75rem;"></div>',
-        '<div style="font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-light);margin-bottom:.6rem;">Licence</div>',
-        '<div class="contact-row">', '  <div class="contact-icon">🪪</div>', '  <div style="font-size:.85rem;">',
-        f'    <div style="font-weight:600;color:rgba(255,255,255,.9);">{esc(lic["name"])}</div>',
-        f'    <div style="color:rgba(255,255,255,.55);font-size:.78rem;">{esc(lic["class"])} · No. {cvdata.masked_licence(lic["number"])} · Exp. {esc(lic["expires"])}</div>',
-        '  </div>', '</div>',
+        '<div style="font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-light);margin-bottom:.6rem;">' + ("Licences" if len(d["licences"]) > 1 else "Licence") + '</div>',
     ]
+    for lic in d["licences"]:
+        sub = cvdata.licence_web(lic)
+        out += ['<div class="contact-row">', '  <div class="contact-icon">🪪</div>', '  <div style="font-size:.85rem;">',
+                f'    <div style="font-weight:600;color:rgba(255,255,255,.9);">{esc(lic["name"])}</div>']
+        if sub:
+            out.append(f'    <div style="color:rgba(255,255,255,.55);font-size:.78rem;">{esc(sub)}</div>')
+        out += ['  </div>', '</div>']
     return ind(6, out)
 
 
